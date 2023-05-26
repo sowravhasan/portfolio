@@ -344,3 +344,10 @@
         margin-top: 10px;
     }
 }
+@media (max-width: 340px){
+    .footer-content .socials ul li a {
+        color: white;
+        transition: 0.3s ease;
+        padding: 2px;
+    }
+}
