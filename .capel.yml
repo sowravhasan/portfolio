@@ -1,5 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/sowravha/public_html/
-    - /bin/cp * $DEPLOYPATH
