@@ -1,7 +1,5 @@
 # Sowrav Hasan - WordPress Expert Portfolio
 
-![Sowrav Hasan Portfolio](https://i.ibb.co/Y7PsKqZ/IMG-2041.jpg)
-
 ## 🚀 Live Demo
 - **Netlify:** [https://sowrav-portfolio.netlify.app/](https://sowrav-portfolio.netlify.app/)
 - **GitHub Pages:** [https://sowravhasan.github.io/portfolio/](https://sowravhasan.github.io/portfolio/)
