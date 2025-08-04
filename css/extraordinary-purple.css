@@ -335,7 +335,9 @@ body.dark-mode .navbar-nav .nav-link.active {
     box-shadow: var(--primary-glow-hover);
     transform: scale(1.1);
 }
-
+body.dark-mode .navbar-toggler .fa-bars {
+    color: var(--dark-text-primary);  
+}
 /* ===== BUTTONS ===== */
 .btn {
     font-family: var(--font-primary);
