@@ -1,6 +1,55 @@
 /* ===== PREMIUM PORTFOLIO DESIGN - MINIMALISTIC YELLOW THEME ===== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
+/* ===== ICON LOADING OPTIMIZATION ===== */
+/* Icon loading states and optimization */
+i[class*="fa-"] {
+    font-display: swap;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Prevent layout shift during icon loading */
+.fa-solid,
+.fa-regular,
+.fa-brands {
+    min-width: 1em;
+    text-align: center;
+}
+
+/* Loading state for icons */
+body.icons-loading i[class*="fa-"]:not(.fa-quote-left):not(.fa-star) {
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+body.icons-loaded i[class*="fa-"] {
+    opacity: 1;
+}
+
+/* Critical icon placeholders during loading */
+body.icons-loading .service-icon-modern::before,
+body.icons-loading .highlight-icon::before,
+body.icons-loading .skill-modern-icon::before {
+    content: '●';
+    color: var(--primary);
+    opacity: 0.3;
+    animation: iconPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
 /* ===== CSS VARIABLES ===== */
 :root {
     /* Minimalistic Yellow Color Scheme */
@@ -239,7 +288,7 @@ body.dark-mode .portfolio-filters .filter-btn {
 body.dark-mode .portfolio-filters .filter-btn.active,
 body.dark-mode .portfolio-filters .filter-btn:hover {
     background: var(--primary) !important;
-    color: #000 !important;
+    color: #FFFFFF !important;
 }
 
 body.dark-mode .badge-glow {
@@ -2316,6 +2365,126 @@ body.dark-mode .portfolio-cta {
 body.dark-mode .portfolio-item {
     background: rgba(30, 30, 30, 0.8);
     border: 1px solid rgba(243, 156, 18, 0.2);
+}
+
+/* ===== COMPREHENSIVE DARK MODE TEXT FIXES ===== */
+/* Fix all black text colors in dark mode */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode p,
+body.dark-mode span:not(.highlight):not(.badge):not(.tech-badge),
+body.dark-mode div:not(.btn):not(.badge):not(.highlight),
+body.dark-mode small,
+body.dark-mode strong {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .text-muted {
+    color: var(--dark-text-muted) !important;
+}
+
+/* Specific element fixes */
+body.dark-mode .hero-title,
+body.dark-mode .hero-subtitle,
+body.dark-mode .hero-description {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .service-title,
+body.dark-mode .service-desc {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .testimonial-name,
+body.dark-mode .testimonial-role,
+body.dark-mode .testimonial-content p {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .pricing-title,
+body.dark-mode .pricing-price,
+body.dark-mode .pricing-desc {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .contact-item h5,
+body.dark-mode .contact-item p {
+    color: var(--dark-text-primary) !important;
+}
+
+/* Button text fixes */
+body.dark-mode .btn-primary:hover,
+body.dark-mode .btn-modern:hover {
+    color: #FFFFFF !important;
+}
+
+body.dark-mode .btn-outline {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+body.dark-mode .btn-outline:hover {
+    background: var(--primary) !important;
+    color: #FFFFFF !important;
+}
+
+/* Modern sections text fixes */
+body.dark-mode .section-badge {
+    color: var(--primary) !important;
+}
+
+body.dark-mode .highlight-card h5,
+body.dark-mode .highlight-card p {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .expertise-content h6,
+body.dark-mode .expertise-content small {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .skill-modern-info h6 {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .achievement-badge strong,
+body.dark-mode .achievement-badge small {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .portfolio-title,
+body.dark-mode .portfolio-description {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .filter-modern-btn {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .filter-modern-btn.active,
+body.dark-mode .filter-modern-btn:hover {
+    color: #FFFFFF !important;
+}
+
+/* List item fixes */
+body.dark-mode .service-features li,
+body.dark-mode .pricing-features li {
+    color: var(--dark-text-secondary) !important;
+}
+
+/* Override any remaining black text */
+body.dark-mode [style*="color: #000"],
+body.dark-mode [style*="color: black"],
+body.dark-mode [style*="color:#000"],
+body.dark-mode [style*="color:black"] {
+    color: var(--dark-text-primary) !important;
 }
 
 /* Responsive Adjustments */

@@ -72,10 +72,28 @@
     <!-- DNS Prefetch for external resources -->
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//i.ibb.co">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://ka-f.fontawesome.com" crossorigin>
 
-    <!-- Bootstrap 5 & Icons -->
+    <!-- Preload critical Font Awesome CSS -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    </noscript>
+
+    <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Font Awesome fallback with async loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        media="print" onload="this.media='all'; this.onload=null;">
+
+    <!-- Preload Font Awesome fonts -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff2"
+        as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-brands-400.woff2"
+        as="font" type="font/woff2" crossorigin>
 
     <!-- Glowing Yellow Theme Styles -->
     <link rel="stylesheet" href="css/minimalistic-yellow.css">
@@ -345,7 +363,7 @@
                     Transform Your Digital Vision with <span class="highlight">Sowrav Hasan</span>
                 </h1>
                 <h2 class="hero-subtitle">
-                    Senior <span id="typed-text">Full-Stack WordPress Engineer</span> | Bangladesh
+                    Senior <span id="typed-text">Full-Stack WordPress Engineer</span> in Bangladesh
                 </h2>
                 <p class="hero-description">
                     Crafting exceptional WordPress solutions since 2019. I specialize in building lightning-fast,
@@ -1054,19 +1072,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Call to Action -->
-            <div class="portfolio-cta mt-5 text-center">
-                <div class="cta-content">
-                    <h4 class="mb-3">Ready to Start Your Project?</h4>
-                    <p class="text-muted mb-4">Let's discuss how I can bring your vision to life with cutting-edge web
-                        solutions</p>
-                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20a%20new%20project."
-                        target="_blank" class="btn-modern btn-primary btn-lg">
-                        <i class="fa-solid fa-comments me-2"></i>Start Your Project
-                    </a>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1095,15 +1100,6 @@
     </div>
 
     <!-- Duplicate portfolio items removed -->
-    </div>
-
-    <div class="portfolio-cta text-center mt-5">
-        <p class="fs-5 mb-4">Ready to start your next project?</p>
-        <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20a%20project%20with%20you."
-            target="_blank" class="btn-modern btn-primary">
-            <i class="fa-solid fa-rocket me-2"></i>Let's Work Together
-        </a>
-    </div>
     </div>
     </section>
 
