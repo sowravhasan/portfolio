@@ -110,13 +110,13 @@ document.addEventListener("DOMContentLoaded", function () {
   /* ===== TYPING ANIMATION ===== */
   const typedTextElement = document.getElementById("typed-text");
   const textArray = [
-    "Senior WordPress Developer in Bangladesh",
+    "Senior WordPress Developer",
     "Premium WooCommerce Expert",
     "Full-Stack WordPress Engineer",
     "WordPress Performance Optimization Specialist",
     "Custom WordPress Theme Developer",
     "WordPress Security & Maintenance Expert",
-    "Bangladesh WordPress Development Leader",
+    "WordPress Development Leader",
     "Professional WordPress Plugin Developer",
   ];
 
