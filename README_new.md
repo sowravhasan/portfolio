@@ -52,7 +52,7 @@ Welcome to my premium digital portfolio! I'm **Sowrav Hasan**, a professional Wo
 
 ## 🎨 Design Philosophy
 
-This portfolio features a modern **Minimalistic Yellow** design theme that represents:
+This portfolio features a modern **Glowing Yellow** design theme that represents:
 - ✨ **Innovation & Creativity** - Cutting-edge design and development approaches
 - 🌟 **Premium Quality** - Professional excellence in every project
 - 🚀 **Performance Focus** - Optimized for speed and user experience
@@ -146,14 +146,12 @@ I'm always excited to discuss new projects and opportunities. Whether you need:
 
 ## 🔄 Version History
 
-### v2.0.0 (Current) - Minimalistic Yellow Premium Theme
-- 🎨 Complete visual redesign with minimalistic yellow color scheme
-- � Enhanced readability with improved text contrast
-- 🧹 Clean backgrounds without excessive glow effects
-- �🚀 Enhanced performance and subtle animations
+### v2.0.0 (Current) - Glowing Yellow Premium Theme
+- 🎨 Complete visual redesign with glowing yellow color scheme
+- 🚀 Enhanced performance and animations
 - 📱 Improved mobile responsiveness
 - 🔍 Advanced SEO optimization
-- ✨ Professional, easy-to-read design elements
+- ✨ New interactive elements and effects
 
 ### v1.0.0 - Initial Purple Theme
 - 🟣 Original purple theme design

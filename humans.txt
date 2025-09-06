@@ -1,0 +1,74 @@
+# Humans.txt - The team behind sowrav-hasan.netlify.app
+
+/* TEAM */
+Developer: Sowrav Hasan
+Role: Lead WordPress Developer & Full-Stack Engineer
+Location: Dhaka, Bangladesh
+Contact: sowravhasan101 [at] gmail.com
+WhatsApp: +8801882408643
+LinkedIn: https://linkedin.com/in/sowrav-hasan
+GitHub: https://github.com/sowravhasan
+Website: https://sowrav-hasan.netlify.app
+
+/* THANKS */
+WordPress Community - For the amazing CMS platform
+Bootstrap Team - For the responsive framework
+Font Awesome - For the beautiful icons
+Google Fonts - For the typography
+Netlify - For the hosting platform
+Open Source Contributors - For making development better
+
+/* SITE INFORMATION */
+Last Updated: 2025/09/06
+Language: English
+Doctype: HTML5
+IDE: Visual Studio Code
+Technologies: HTML5, CSS3, JavaScript, WordPress, PHP, Bootstrap
+Frameworks: Bootstrap 5.3.3, Font Awesome 6.6.0
+Fonts: Space Grotesk from Google Fonts
+Performance: Optimized for Core Web Vitals
+SEO: Structured data, meta tags, sitemap
+Accessibility: WCAG 2.1 guidelines followed
+
+/* DEVELOPMENT STANDARDS */
+Code Style: Clean, semantic HTML
+CSS Methodology: BEM-inspired naming
+JavaScript: Vanilla JS with modern ES6+
+Responsive: Mobile-first approach
+Performance: Image optimization, lazy loading
+Security: Content Security Policy, XSS protection
+SEO: Schema markup, Open Graph, Twitter Cards
+
+/* SERVICES */
+- Custom WordPress Development
+- WooCommerce E-commerce Solutions
+- Performance Optimization
+- Security Hardening & Maintenance
+- SEO Implementation
+- Responsive Web Design
+- Custom Plugin Development
+- Theme Customization
+
+/* STATS */
+Experience: 5+ years
+Projects Completed: 200+
+Satisfied Clients: 150+
+Countries Served: 15+
+Response Time: Within 24 hours
+Support: Ongoing maintenance available
+
+/* CONTACT FOR PROJECTS */
+Email: sowravhasan101@gmail.com
+WhatsApp: https://wa.me/8801882408643
+Portfolio: https://sowrav-hasan.netlify.app
+Fiverr: Available for hire
+Upwork: Professional freelancer
+
+                               _
+                              | |
+  ___  _____      ___ __ __ _ __| |
+ / __|/ _ \ \ /\ / / '__/ _` |_  /
+ \__ \ (_) \ V  V /| | | (_| |/ / 
+ |___/\___/ \_/\_/ |_|  \__,_/___|
+                                 
+  WordPress Developer & Web Solutions Expert

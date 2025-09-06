@@ -1,0 +1,33 @@
+# Redirect common paths to main sections
+/about              /#about              301
+/services           /#services           301  
+/portfolio          /#portfolio          301
+/work               /#portfolio          301
+/projects           /#portfolio          301
+/pricing            /#pricing            301
+/testimonials       /#testimonials       301
+/reviews            /#testimonials       301
+/contact            /#contact            301
+
+# Redirect old GitHub Pages URL to new domain
+https://sowravhasan.github.io/portfolio/*  https://sowrav-hasan.netlify.app/:splat  301!
+
+# Redirect www to non-www
+https://www.sowrav-hasan.netlify.app/*  https://sowrav-hasan.netlify.app/:splat  301!
+
+# Redirect HTTP to HTTPS
+http://sowrav-hasan.netlify.app/*  https://sowrav-hasan.netlify.app/:splat  301!
+
+# Handle 404 errors - redirect to homepage with section anchor
+/404.html           /#home               302
+
+# Force trailing slash removal
+/*/ /:splat 301
+
+# Handle common typos and variations
+/sowrav             /                    301
+/hasan              /                    301  
+/wordpress          /#services           301
+/wp                 /#services           301
+/web-developer      /#about              301
+/freelancer         /#about              301

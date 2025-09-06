@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+    <channel>
+        <title>Sowrav Hasan - WordPress Developer Portfolio</title>
+        <atom:link href="https://sowrav-hasan.netlify.app/rss.xml" rel="self" type="application/rss+xml" />
+        <link>https://sowrav-hasan.netlify.app/</link>
+        <description>Professional WordPress Developer &amp; Full-Stack Web Solutions Expert from Bangladesh. Custom WordPress development, WooCommerce stores, performance optimization &amp; premium web solutions.</description>
+        <lastBuildDate>Fri, 06 Sep 2025 00:00:00 +0000</lastBuildDate>
+        <language>en-US</language>
+        <sy:updatePeriod>weekly</sy:updatePeriod>
+        <sy:updateFrequency>1</sy:updateFrequency>
+        <generator>Custom RSS Generator</generator>
+
+        <item>
+            <title>Premium WordPress Development Services Now Available</title>
+            <link>https://sowrav-hasan.netlify.app/#services</link>
+            <description>Discover professional WordPress development services including custom themes, WooCommerce stores, performance optimization, and security hardening. Expert solutions tailored for business growth.</description>
+            <content:encoded><![CDATA[
+        <p>Transform your digital presence with expert WordPress development services. I specialize in:</p>
+        <ul>
+          <li>Custom WordPress Engineering - Bespoke themes and plugins</li>
+          <li>WooCommerce Store Development - Complete e-commerce solutions</li>
+          <li>Performance & Speed Optimization - Lightning-fast loading times</li>
+          <li>Website Security & Maintenance - Comprehensive protection</li>
+        </ul>
+        <p>With 5+ years of experience serving 150+ satisfied clients worldwide, I deliver WordPress solutions that drive real business results.</p>
+      ]]>            </content:encoded>
+            <pubDate>Fri, 06 Sep 2025 00:00:00 +0000</pubDate>
+            <guid isPermaLink="false">https://sowrav-hasan.netlify.app/services-2025</guid>
+        </item>
+
+        <item>
+            <title>Featured WordPress Projects & Portfolio Showcase</title>
+            <link>https://sowrav-hasan.netlify.app/#portfolio</link>
+            <description>Explore my latest WordPress projects including e-commerce websites, landing pages, and custom web applications. See real examples of high-performance WordPress development work.</description>
+            <content:encoded><![CDATA[
+        <p>Check out my latest WordPress development projects:</p>
+        <ul>
+          <li>Premium E-commerce Jewellery Website - Full WooCommerce integration</li>
+          <li>High-Converting App Landing Pages - Mobile-optimized design</li>
+          <li>Custom WordPress Themes - Tailored for specific business needs</li>
+          <li>SEO-Optimized Business Websites - Built for search engine success</li>
+        </ul>
+        <p>Each project demonstrates expertise in modern WordPress development, performance optimization, and user experience design.</p>
+      ]]>            </content:encoded>
+            <pubDate>Thu, 05 Sep 2025 00:00:00 +0000</pubDate>
+            <guid isPermaLink="false">https://sowrav-hasan.netlify.app/portfolio-2025</guid>
+        </item>
+
+        <item>
+            <title>WordPress Performance Optimization Expertise</title>
+            <link>https://sowrav-hasan.netlify.app/</link>
+            <description>Learn about advanced WordPress performance optimization techniques including Core Web Vitals improvements, caching strategies, and speed enhancements for better search rankings.</description>
+            <content:encoded><![CDATA[
+        <p>WordPress performance optimization is crucial for user experience and SEO success. My optimization services include:</p>
+        <ul>
+          <li>Core Web Vitals Optimization - Meet Google's performance standards</li>
+          <li>Advanced Caching Implementation - Reduce server load and improve speed</li>
+          <li>Image Optimization & Lazy Loading - Faster page loads</li>
+          <li>Database Optimization - Clean and efficient database queries</li>
+          <li>CDN Integration - Global content delivery</li>
+        </ul>
+        <p>Achieve loading times under 2 seconds and improve your search engine rankings with professional performance optimization.</p>
+      ]]>            </content:encoded>
+            <pubDate>Wed, 04 Sep 2025 00:00:00 +0000</pubDate>
+            <guid isPermaLink="false">https://sowrav-hasan.netlify.app/performance-2025</guid>
+        </item>
+    </channel>
+</rss>

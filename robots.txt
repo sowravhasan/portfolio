@@ -2,13 +2,23 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://sowravhasan.github.io/portfolio/sitemap.xml
+Sitemap: https://sowrav-hasan.netlify.app/sitemap.xml
 
-# Allow crawling of important pages
+# Allow crawling of important pages and resources
 Allow: /index.html
 Allow: /css/
 Allow: /js/
 Allow: /images/
+Allow: /manifest.json
 
-# Crawl delay (optional)
+# Disallow crawling of unnecessary files
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /node_modules/
+Disallow: /*.log
+
+# Crawl delay for responsible crawling
 Crawl-delay: 1
+
+# Host directive (preferred domain)
+Host: https://sowrav-hasan.netlify.app
