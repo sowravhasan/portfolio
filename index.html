@@ -78,25 +78,13 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://ka-f.fontawesome.com" crossorigin>
 
-    <!-- Preload critical Font Awesome CSS -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    </noscript>
+    <!-- Font Awesome Icons - Reliable Loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
-
-    <!-- Font Awesome fallback with async loading -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        media="print" onload="this.media='all'; this.onload=null;">
-
-    <!-- Preload Font Awesome fonts -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff2"
-        as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-brands-400.woff2"
-        as="font" type="font/woff2" crossorigin>
 
     <!-- Glowing Yellow Theme Styles -->
     <link rel="stylesheet" href="css/minimalistic-yellow.css">
@@ -1507,6 +1495,64 @@
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/minimalistic-yellow.js"></script>
+
+    <!-- Font Awesome Fallback Loading -->
+    <script>
+        (function () {
+            // Check if Font Awesome is loaded properly
+            function checkFontAwesome() {
+                const testElement = document.createElement('i');
+                testElement.className = 'fa-solid fa-heart';
+                testElement.style.position = 'absolute';
+                testElement.style.left = '-9999px';
+                testElement.style.visibility = 'hidden';
+                document.body.appendChild(testElement);
+
+                const computed = window.getComputedStyle(testElement);
+                const fontFamily = computed.fontFamily.toLowerCase();
+                document.body.removeChild(testElement);
+
+                return fontFamily.includes('font awesome') || fontFamily.includes('fa solid');
+            }
+
+            // Fallback loader
+            let attempts = 0;
+            const maxAttempts = 50;
+
+            const checkInterval = setInterval(() => {
+                attempts++;
+
+                if (checkFontAwesome()) {
+                    clearInterval(checkInterval);
+                    document.body.classList.add('fa-loaded');
+                    console.log('✅ Font Awesome loaded successfully');
+                    return;
+                }
+
+                if (attempts >= maxAttempts) {
+                    clearInterval(checkInterval);
+                    // Load fallback Font Awesome from alternative CDN
+                    const fallbackLink = document.createElement('link');
+                    fallbackLink.rel = 'stylesheet';
+                    fallbackLink.href = 'https://use.fontawesome.com/releases/v6.6.0/css/all.css';
+                    fallbackLink.crossOrigin = 'anonymous';
+                    document.head.appendChild(fallbackLink);
+
+                    console.warn('⚠️ Loading Font Awesome fallback CDN');
+
+                    // Final check after fallback
+                    setTimeout(() => {
+                        if (checkFontAwesome()) {
+                            document.body.classList.add('fa-loaded');
+                            console.log('✅ Font Awesome fallback loaded');
+                        } else {
+                            console.error('❌ Font Awesome failed to load from both CDNs');
+                        }
+                    }, 2000);
+                }
+            }, 100);
+        })();
+    </script>
 
     <!-- Dynamic Copyright Year -->
     <script>

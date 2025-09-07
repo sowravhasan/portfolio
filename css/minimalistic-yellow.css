@@ -18,14 +18,43 @@ i[class*="fa-"] {
     text-align: center;
 }
 
-/* Loading state for icons */
-body.icons-loading i[class*="fa-"]:not(.fa-quote-left):not(.fa-star) {
-    opacity: 0.4;
-    transition: opacity 0.3s ease;
+/* Enhanced loading states */
+body:not(.fa-loaded) i[class*="fa-"] {
+    position: relative;
+    color: transparent !important;
 }
 
-body.icons-loaded i[class*="fa-"] {
-    opacity: 1;
+body:not(.fa-loaded) i[class*="fa-"]::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    border: 2px solid #FFD700;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: iconSpinner 1s linear infinite;
+}
+
+@keyframes iconSpinner {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+body.fa-loaded i[class*="fa-"] {
+    color: inherit !important;
+    transition: color 0.3s ease;
+}
+
+body.fa-loaded i[class*="fa-"]::before {
+    display: none;
 }
 
 /* Critical icon placeholders during loading */
