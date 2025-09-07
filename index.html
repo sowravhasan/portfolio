@@ -76,13 +76,27 @@
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//i.ibb.co">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://ka-f.fontawesome.com" crossorigin>
+
+    <!-- Preload critical Font Awesome CSS -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    </noscript>
 
     <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
 
-    <!-- Bootstrap Icons - Fast loading icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Font Awesome fallback with async loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        media="print" onload="this.media='all'; this.onload=null;">
+
+    <!-- Preload Font Awesome fonts -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff2"
+        as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-brands-400.woff2"
+        as="font" type="font/woff2" crossorigin>
 
     <!-- Glowing Yellow Theme Styles -->
     <link rel="stylesheet" href="css/minimalistic-yellow.css">
@@ -314,7 +328,7 @@
         "openingHours": "Mo-Su 09:00-18:00"
     }
     </script>
-    
+    }
     </script>
 
     <!-- Organization Schema - Complete and Valid -->
@@ -399,1390 +413,1111 @@
 </head>
 
 <body>
-    <!-- Inline SVG Icon Library -->
-    <svg style="display: none;">
-        <!-- Menu Icons -->
-        <symbol id="icon-bars" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-        </symbol>
-
-        <!-- Social & Communication Icons -->
-        <symbol id="icon-comments" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98 1 4.26L1 22l5.74-2c1.28.64 2.72 1 4.26 1 5.52 0 10-4.48 10-10S17.52 2 12 2z" />
-        </symbol>
-
-        <symbol id="icon-moon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-        </symbol>
-
-        <symbol id="icon-sun" viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="12" cy="12" r="5" />
-            <line x1="12" y1="1" x2="12" y2="3" />
-            <line x1="12" y1="21" x2="12" y2="23" />
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-            <line x1="1" y1="12" x2="3" y2="12" />
-            <line x1="21" y1="12" x2="23" y2="12" />
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-        </symbol>
-
-        <!-- Action Icons -->
-        <symbol id="icon-rocket" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L4 9l3 3 2.5-2.5L12 12l2.5-2.5L17 12l3-3-8-7z" />
-            <path d="M7 14H3l2-2 2 2zM17 14h4l-2-2-2 2z" />
-            <path d="M12 16v4l-2-2h4z" />
-        </symbol>
-
-        <symbol id="icon-handshake" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M9.5 3A6.5 6.5 0 0 0 3 9.5c0 1.61.59 3.09 1.56 4.23l.71.71C6.09 15.41 7.57 16 9.18 16s3.09-.59 4.23-1.56l.71-.71A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 0 0 9.5 3z" />
-        </symbol>
-
-        <!-- Tech Icons -->
-        <symbol id="icon-wordpress" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M21.469 12c0 4.424-3.045 8.129-7.116 9.095l4.25-12.368c.789-1.976.79-3.565.79-4.691.001-.424-.032-.817-.095-1.179 1.973 1.746 3.17 4.297 3.17 7.143zm-1.604-7.543c-.749-.049-1.417-.095-1.417-.095-.668-.049-.591-1.025.077-1.025 0 0 2.021.157 3.311.157 1.245 0 3.288-.157 3.288-.157.668 0 .746.976.078 1.025 0 0-.668.049-1.371.095l4.363 13.004 2.406-7.177c1.027-2.623 1.372-4.471 1.372-6.21 0-2.339-1.246-3.958-2.313-5.255-.949-1.333-1.818-2.458-1.818-3.791 0-1.488 1.134-2.876 2.732-2.876.067 0 .132.009.198.013-2.894-2.656-6.729-4.273-10.926-4.273-5.677 0-10.65 3.094-13.349 7.686.376-.024.73-.04 1.029-.04 1.676 0 4.269-.203 4.269-.203.861-.05.966 1.218.105 1.218 0 0-.866.102-1.83.152l5.82 17.303 3.501-10.5-2.494-6.803c-.861-.05-1.675-.152-1.675-.152-.861 0-.761-1.268.1-1.218 0 0 2.642.203 4.218.203 1.675 0 4.268-.203 4.268-.203.862-.05.967 1.218.106 1.218z" />
-        </symbol>
-
-        <symbol id="icon-elementor" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17V7h3v10H8zm8 0h-5v-2h5v2zm0-4h-5v-2h5v2zm0-4h-5V7h5v2z" />
-        </symbol>
-
-        <symbol id="icon-shopping-cart" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
-        </symbol>
-
-        <symbol id="icon-php" viewBox="0 0 24 24" fill="currentColor">
-            <ellipse cx="12" cy="12" rx="11" ry="4.5" />
-            <path d="M12 2c6.075 0 11 2.015 11 4.5S18.075 11 12 11 1 8.985 1 6.5 5.925 2 12 2z" />
-            <text x="12" y="13" text-anchor="middle" fill="white" font-size="6" font-weight="bold">PHP</text>
-        </symbol>
-
-        <symbol id="icon-html5" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M1.5 2h21l-1.91 21.563L11.977 26l-8.564-2.438L1.5 2zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 6.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z" />
-        </symbol>
-
-        <symbol id="icon-css3" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M1.5 2h21l-1.91 21.563L11.977 26l-8.565-2.438L1.5 2zm17.09 4.413L5.41 6.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 6.413z" />
-        </symbol>
-
-        <symbol id="icon-js" viewBox="0 0 24 24" fill="currentColor">
-            <rect width="22" height="22" x="1" y="1" fill="#f7df1e" rx="4" />
-            <text x="12" y="15" text-anchor="middle" fill="black" font-size="10" font-weight="bold">JS</text>
-        </symbol>
-
-        <symbol id="icon-react" viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="12" cy="12" r="2" />
-            <path
-                d="M12 1c2.97 0 6.126.84 8.442 2.42C22.126 4.73 23 6.321 23 8.003c0 1.783-1.006 3.44-2.615 4.737.239 3.939-1.508 6.74-4.798 7.786C13.612 21.05 12.306 21 12 21c-2.97 0-6.126-.84-8.442-2.42C1.874 17.27 1 15.679 1 13.997c0-1.783 1.006-3.44 2.615-4.737C3.376 5.321 5.124 2.52 8.414 1.474 10.388.95 11.694 1 12 1z" />
-        </symbol>
-
-        <symbol id="icon-git" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189L10.929 23.55c.603.604 1.582.604 2.188 0l10.43-10.43c.6-.601.6-1.582-.001-2.19z" />
-        </symbol>
-
-        <!-- UI Icons -->
-        <symbol id="icon-code" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
-        </symbol>
-
-        <symbol id="icon-users" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            <path
-                d="M21 8a3 3 0 11-6 0 3 3 0 016 0zM19 14a5.972 5.972 0 014 2.328V21h-4v-2a4.993 4.993 0 00-1-3.001c.668-.001 1.336-.171 1-.999z" />
-        </symbol>
-
-        <symbol id="icon-clock" viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="12" cy="12" r="10" />
-            <path d="M12 6v6l4 2" />
-        </symbol>
-
-        <symbol id="icon-award" viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="12" cy="8" r="7" />
-            <path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12" />
-        </symbol>
-
-        <symbol id="icon-user-tie" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-            <path d="M12 14l-2 6h4l-2-6z" />
-        </symbol>
-
-        <symbol id="icon-lightbulb" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7z" />
-        </symbol>
-
-        <symbol id="icon-mobile" viewBox="0 0 24 24" fill="currentColor">
-            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-            <line x1="12" y1="18" x2="12.01" y2="18" />
-        </symbol>
-
-        <symbol id="icon-search" viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="11" cy="11" r="8" />
-            <path d="m21 21-4.35-4.35" />
-        </symbol>
-
-        <symbol id="icon-tachometer" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-1.41-1.41L13.17 11H10V9h4.93l-1.36-1.36L15 6.22l3.78 3.78-3.78 3.78L13.59 12.41 10 16v-1z" />
-        </symbol>
-
-        <symbol id="icon-check" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-        </symbol>
-
-        <symbol id="icon-shield" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
-        </symbol>
-
-        <!-- Social Media Icons -->
-        <symbol id="icon-facebook" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-        </symbol>
-
-        <symbol id="icon-messenger" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M12 0C5.373 0 0 4.975 0 11.111c0 3.497 1.745 6.616 4.472 8.652V24l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.974 12-11.111C24 4.975 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8.1l3.13 3.26L19.752 8.1l-6.561 6.863z" />
-        </symbol>
-
-        <symbol id="icon-envelope" viewBox="0 0 24 24" fill="currentColor">
-            <rect x="2" y="4" width="20" height="16" rx="2" />
-            <path d="m22 7-10 5L2 7" />
-        </symbol>
-    </svg>
-
     <!-- Modern Navigation -->
     <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="#home">Sowrav Hasan</a>
+        <div class="container">
+            <a class="navbar-brand" href="#home">Sowrav Hasan</a>
 
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav">
-                    <i class="bi bi-list"></i>
-                </button>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#services">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#portfolio">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#testimonials">Testimonials</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-discuss"
-                                href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20my%20project%20requirements"
-                                target="_blank">
-                                <i class="bi bi-chat-dots me-1"></i>Discuss Project
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <button class="dark-mode-toggle ms-2" onclick="toggleDarkMode()">
-                                <i class="bi bi-moon-fill" id="theme-icon"></i>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        Transform Your Digital Vision with <span class="highlight">Sowrav Hasan</span>
-                    </h1>
-                    <h2 class="hero-subtitle">
-                        Senior <span id="typed-text">Full-Stack WordPress Engineer</span> in Bangladesh
-                    </h2>
-                    <p class="hero-description">
-                        Crafting exceptional WordPress solutions since 2019. I specialize in building lightning-fast,
-                        conversion-optimized websites that drive real business results. From custom theme development
-                        to complex WooCommerce integrations - I turn your ideas into powerful digital experiences.
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#portfolio" class="btn-modern btn-primary">
-                            <i class="bi bi-rocket-takeoff me-2"></i>
-                            Explore My Work
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-discuss"
+                            href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20my%20project%20requirements"
+                            target="_blank">
+                            <i class="fa-solid fa-comments me-1"></i>Discuss Project
                         </a>
-                        <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20would%20like%20to%20discuss%20a%20premium%20WordPress%20development%20project"
-                            target="_blank" class="btn-modern btn-outline">
-                            <i class="bi bi-handshake me-2"></i>
-                            Start Project Discussion
-                        </a>
-                    </div>
+                    </li>
+                    <button class="dark-mode-toggle ms-2" onclick="toggleDarkMode()">
+                        <i class="fa-solid fa-moon" id="theme-icon"></i>
+                    </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-                    <!-- Tech Stack Icons -->
-                    <div class="tech-stack mt-4">
-                        <div class="tech-icon" data-tooltip="WordPress">
-                            <i class="bi bi-wordpress"></i>
-                        </div>
-                        <div class="tech-icon" data-tooltip="Elementor">
-                            <i class="bi bi-window-stack"></i>
-                        </div>
-                        <div class="tech-icon" data-tooltip="WooCommerce">
-                            <i class="bi bi-cart"></i>
-                        </div>
-                        <div class="tech-icon" data-tooltip="PHP">
-                            <i class="bi bi-code-slash"></i>
-                        </div>
-                        <div class="tech-icon" data-tooltip="HTML5">
-                            <i class="bi bi-filetype-html"></i>
-                        </div>
-                        <div class="tech-icon" data-tooltip="CSS3">
-                            <i class="bi bi-filetype-css"></i>
-                        </div>
-                        <div class="tech-icon" data-tooltip="JavaScript">
-                            <i class="bi bi-filetype-js"></i>
-                        </div>
-                        <div class="tech-icon" data-tooltip="React">
-                            <i class="bi bi-arrow-repeat"></i>
-                        </div>
-                        <div class="tech-icon" data-tooltip="Tailwind CSS">
-                            <i class="bi bi-wind"></i>
-                        </div>
-                        <div class="tech-icon" data-tooltip="Git">
-                            <i class="bi bi-git"></i>
-                        </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Transform Your Digital Vision with <span class="highlight">Sowrav Hasan</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    Senior <span id="typed-text">Full-Stack WordPress Engineer</span> in Bangladesh
+                </h2>
+                <p class="hero-description">
+                    Crafting exceptional WordPress solutions since 2019. I specialize in building lightning-fast,
+                    conversion-optimized websites that drive real business results. From custom theme development
+                    to complex WooCommerce integrations - I turn your ideas into powerful digital experiences.
+                </p>
+                <div class="hero-cta">
+                    <a href="#portfolio" class="btn-modern btn-primary">
+                        <i class="fa-solid fa-rocket me-2"></i>
+                        Explore My Work
+                    </a>
+                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20would%20like%20to%20discuss%20a%20premium%20WordPress%20development%20project"
+                        target="_blank" class="btn-modern btn-outline">
+                        <i class="fa-solid fa-handshake me-2"></i>
+                        Start Project Discussion
+                    </a>
+                </div>
+
+                <!-- Tech Stack Icons -->
+                <div class="tech-stack mt-4">
+                    <div class="tech-icon" data-tooltip="WordPress">
+                        <i class="fa-brands fa-wordpress tech-icon wordpress"></i>
+                    </div>
+                    <div class="tech-icon" data-tooltip="Elementor">
+                        <i class="fa-brands fa-elementor tech-icon elementor"></i>
+                    </div>
+                    <div class="tech-icon" data-tooltip="WooCommerce">
+                        <i class="fa-solid fa-shopping-cart tech-icon woocommerce"></i>
+                    </div>
+                    <div class="tech-icon" data-tooltip="PHP">
+                        <i class="fa-brands fa-php tech-icon php"></i>
+                    </div>
+                    <div class="tech-icon" data-tooltip="HTML5">
+                        <i class="fa-brands fa-html5 tech-icon html"></i>
+                    </div>
+                    <div class="tech-icon" data-tooltip="CSS3">
+                        <i class="fa-brands fa-css3-alt tech-icon css"></i>
+                    </div>
+                    <div class="tech-icon" data-tooltip="JavaScript">
+                        <i class="fa-brands fa-js-square tech-icon js"></i>
+                    </div>
+                    <div class="tech-icon" data-tooltip="React">
+                        <i class="fa-brands fa-react tech-icon react"></i>
+                    </div>
+                    <div class="tech-icon" data-tooltip="Tailwind CSS">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
+                            alt="Tailwind CSS" class="tech-icon-img tailwind">
+                    </div>
+                    <div class="tech-icon" data-tooltip="Git">
+                        <i class="fa-brands fa-git-alt tech-icon git"></i>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Creative Stats Section -->
-        <section class="stats-showcase py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="bi bi-code-slash"></i>
-                            </div>
-                            <div class="stat-number" data-target="200">0</div>
-                            <div class="stat-label">Projects Delivered</div>
+    <!-- Creative Stats Section -->
+    <section class="stats-showcase py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-code"></i>
                         </div>
+                        <div class="stat-number" data-target="200">0</div>
+                        <div class="stat-label">Projects Delivered</div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="bi bi-people"></i>
-                            </div>
-                            <div class="stat-number" data-target="150">0</div>
-                            <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-users"></i>
                         </div>
+                        <div class="stat-number" data-target="150">0</div>
+                        <div class="stat-label">Happy Clients</div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="bi bi-clock"></i>
-                            </div>
-                            <div class="stat-number" data-target="5">0</div>
-                            <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-clock"></i>
                         </div>
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label">Years Experience</div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="bi bi-award"></i>
-                            </div>
-                            <div class="stat-number" data-target="98">0</div>
-                            <div class="stat-label">Success Rate %</div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-award"></i>
                         </div>
+                        <div class="stat-number" data-target="98">0</div>
+                        <div class="stat-label">Success Rate %</div>
                     </div>
                 </div>
             </div>
-        </section>
         </div>
-        </div>
-        </section>
+    </section>
+    </div>
+    </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-5 about-modern" style="background: var(--bg-secondary);">
-            <div class="container">
-                <div class="row justify-content-center text-center mb-5">
-                    <div class="col-lg-8">
-                        <div class="section-badge mb-3">
-                            <i class="bi bi-person-badge me-2"></i>About Me
-                        </div>
-                        <h2 class="gradient-text mb-4">Crafting Digital Excellence</h2>
-                        <p class="fs-5 text-muted">Where Innovation Meets Performance in Web Development</p>
+    <!-- About Section -->
+    <section id="about" class="py-5 about-modern" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <div class="section-badge mb-3">
+                        <i class="fa-solid fa-user-tie me-2"></i>About Me
                     </div>
+                    <h2 class="gradient-text mb-4">Crafting Digital Excellence</h2>
+                    <p class="fs-5 text-muted">Where Innovation Meets Performance in Web Development</p>
                 </div>
+            </div>
 
-                <div class="row g-5 align-items-center">
-                    <!-- Left Content -->
-                    <div class="col-lg-6">
-                        <div class="about-content">
-                            <div class="highlight-card mb-4">
-                                <div class="highlight-icon">
-                                    <i class="bi bi-lightbulb"></i>
+            <div class="row g-5 align-items-center">
+                <!-- Left Content -->
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="highlight-card mb-4">
+                            <div class="highlight-icon">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-2">My Development Philosophy</h4>
+                                <p class="mb-0 text-muted">Creating digital experiences that blend stunning aesthetics
+                                    with flawless performance</p>
+                            </div>
+                        </div>
+
+                        <div class="about-description mb-4">
+                            <p class="lead mb-3">
+                                I believe in creating digital experiences that not only look stunning but perform
+                                flawlessly. Each project is a unique journey where I blend creative design with robust
+                                functionality.
+                            </p>
+                            <p class="text-muted">
+                                From concept to launch, I focus on user-centric design, clean code architecture, and
+                                scalable solutions that grow with your business needs.
+                            </p>
+                        </div>
+
+                        <div class="expertise-grid">
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i class="fa-solid fa-code"></i>
                                 </div>
+                                <div class="expertise-content">
+                                    <h6>Clean Code</h6>
+                                    <small class="text-muted">Maintainable & Scalable</small>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i class="fa-solid fa-mobile-alt"></i>
+                                </div>
+                                <div class="expertise-content">
+                                    <h6>Mobile-First</h6>
+                                    <small class="text-muted">Responsive Design</small>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i class="fa-solid fa-rocket"></i>
+                                </div>
+                                <div class="expertise-content">
+                                    <h6>Fast Loading</h6>
+                                    <small class="text-muted">Optimized Performance</small>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i class="fa-solid fa-search"></i>
+                                </div>
+                                <div class="expertise-content">
+                                    <h6>SEO Ready</h6>
+                                    <small class="text-muted">Search Optimized</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Skills -->
+                <div class="col-lg-6">
+                    <div class="skills-modern-container">
+                        <div class="skills-header mb-4">
+                            <h4 class="mb-2">Technical Expertise</h4>
+                            <p class="text-muted">Mastery across the full development stack</p>
+                        </div>
+
+                        <div class="skills-modern-grid">
+                            <div class="skill-modern-item">
+                                <div class="skill-modern-header">
+                                    <div class="skill-modern-icon">
+                                        <i class="fa-brands fa-wordpress"></i>
+                                    </div>
+                                    <div class="skill-modern-info">
+                                        <h6>WordPress Development</h6>
+                                        <span class="skill-percentage">95%</span>
+                                    </div>
+                                </div>
+                                <div class="skill-modern-bar">
+                                    <div class="skill-modern-progress" data-percentage="95"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-modern-item">
+                                <div class="skill-modern-header">
+                                    <div class="skill-modern-icon">
+                                        <i class="fa-solid fa-code"></i>
+                                    </div>
+                                    <div class="skill-modern-info">
+                                        <h6>Frontend Development</h6>
+                                        <span class="skill-percentage">90%</span>
+                                    </div>
+                                </div>
+                                <div class="skill-modern-bar">
+                                    <div class="skill-modern-progress" data-percentage="90"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-modern-item">
+                                <div class="skill-modern-header">
+                                    <div class="skill-modern-icon">
+                                        <i class="fa-solid fa-shopping-cart"></i>
+                                    </div>
+                                    <div class="skill-modern-info">
+                                        <h6>E-commerce Solutions</h6>
+                                        <span class="skill-percentage">85%</span>
+                                    </div>
+                                </div>
+                                <div class="skill-modern-bar">
+                                    <div class="skill-modern-progress" data-percentage="85"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-modern-item">
+                                <div class="skill-modern-header">
+                                    <div class="skill-modern-icon">
+                                        <i class="fa-solid fa-tachometer-alt"></i>
+                                    </div>
+                                    <div class="skill-modern-info">
+                                        <h6>Performance Optimization</h6>
+                                        <span class="skill-percentage">88%</span>
+                                    </div>
+                                </div>
+                                <div class="skill-modern-bar">
+                                    <div class="skill-modern-progress" data-percentage="88"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Achievement Badges -->
+                        <div class="achievement-badges mt-4">
+                            <div class="achievement-badge">
+                                <i class="fa-solid fa-award"></i>
                                 <div>
-                                    <h4 class="mb-2">My Development Philosophy</h4>
-                                    <p class="mb-0 text-muted">Creating digital experiences that blend stunning
-                                        aesthetics
-                                        with flawless performance</p>
+                                    <strong>200+</strong>
+                                    <small>Projects</small>
                                 </div>
                             </div>
-
-                            <div class="about-description mb-4">
-                                <p class="lead mb-3">
-                                    I believe in creating digital experiences that not only look stunning but perform
-                                    flawlessly. Each project is a unique journey where I blend creative design with
-                                    robust
-                                    functionality.
-                                </p>
-                                <p class="text-muted">
-                                    From concept to launch, I focus on user-centric design, clean code architecture, and
-                                    scalable solutions that grow with your business needs.
-                                </p>
+                            <div class="achievement-badge">
+                                <i class="fa-solid fa-users"></i>
+                                <div>
+                                    <strong>150+</strong>
+                                    <small>Clients</small>
+                                </div>
                             </div>
-
-                            <div class="expertise-grid">
-                                <div class="expertise-item">
-                                    <div class="expertise-icon">
-                                        <i class="bi bi-code"></i>
-                                    </div>
-                                    <div class="expertise-content">
-                                        <h6>Clean Code</h6>
-                                        <small class="text-muted">Maintainable & Scalable</small>
-                                    </div>
-                                </div>
-                                <div class="expertise-item">
-                                    <div class="expertise-icon">
-                                        <i class="bi bi-phone"></i>
-                                    </div>
-                                    <div class="expertise-content">
-                                        <h6>Mobile-First</h6>
-                                        <small class="text-muted">Responsive Design</small>
-                                    </div>
-                                </div>
-                                <div class="expertise-item">
-                                    <div class="expertise-icon">
-                                        <i class="bi bi-rocket-takeoff"></i>
-                                    </div>
-                                    <div class="expertise-content">
-                                        <h6>Fast Loading</h6>
-                                        <small class="text-muted">Optimized Performance</small>
-                                    </div>
-                                </div>
-                                <div class="expertise-item">
-                                    <div class="expertise-icon">
-                                        <i class="bi bi-search"></i>
-                                    </div>
-                                    <div class="expertise-content">
-                                        <h6>SEO Ready</h6>
-                                        <small class="text-muted">Search Optimized</small>
-                                    </div>
+                            <div class="achievement-badge">
+                                <i class="fa-solid fa-clock"></i>
+                                <div>
+                                    <strong>5+</strong>
+                                    <small>Years</small>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Right Skills -->
-                    <div class="col-lg-6">
-                        <div class="skills-modern-container">
-                            <div class="skills-header mb-4">
-                                <h4 class="mb-2">Technical Expertise</h4>
-                                <p class="text-muted">Mastery across the full development stack</p>
-                            </div>
-
-                            <div class="skills-modern-grid">
-                                <div class="skill-modern-item">
-                                    <div class="skill-modern-header">
-                                        <div class="skill-modern-icon">
-                                            <i class="bi bi-wordpress"></i>
-                                        </div>
-                                        <div class="skill-modern-info">
-                                            <h6>WordPress Development</h6>
-                                            <span class="skill-percentage">95%</span>
-                                        </div>
-                                    </div>
-                                    <div class="skill-modern-bar">
-                                        <div class="skill-modern-progress" data-percentage="95"></div>
-                                    </div>
-                                </div>
-
-                                <div class="skill-modern-item">
-                                    <div class="skill-modern-header">
-                                        <div class="skill-modern-icon">
-                                            <i class="bi bi-code"></i>
-                                        </div>
-                                        <div class="skill-modern-info">
-                                            <h6>Frontend Development</h6>
-                                            <span class="skill-percentage">90%</span>
-                                        </div>
-                                    </div>
-                                    <div class="skill-modern-bar">
-                                        <div class="skill-modern-progress" data-percentage="90"></div>
-                                    </div>
-                                </div>
-
-                                <div class="skill-modern-item">
-                                    <div class="skill-modern-header">
-                                        <div class="skill-modern-icon">
-                                            <i class="bi bi-cart"></i>
-                                        </div>
-                                        <div class="skill-modern-info">
-                                            <h6>E-commerce Solutions</h6>
-                                            <span class="skill-percentage">85%</span>
-                                        </div>
-                                    </div>
-                                    <div class="skill-modern-bar">
-                                        <div class="skill-modern-progress" data-percentage="85"></div>
-                                    </div>
-                                </div>
-
-                                <div class="skill-modern-item">
-                                    <div class="skill-modern-header">
-                                        <div class="skill-modern-icon">
-                                            <i class="bi bi-speedometer2"></i>
-                                        </div>
-                                        <div class="skill-modern-info">
-                                            <h6>Performance Optimization</h6>
-                                            <span class="skill-percentage">88%</span>
-                                        </div>
-                                    </div>
-                                    <div class="skill-modern-bar">
-                                        <div class="skill-modern-progress" data-percentage="88"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Achievement Badges -->
-                            <div class="achievement-badges mt-4">
-                                <div class="achievement-badge">
-                                    <i class="bi bi-award"></i>
-                                    <div>
-                                        <strong>200+</strong>
-                                        <small>Projects</small>
-                                    </div>
-                                </div>
-                                <div class="achievement-badge">
-                                    <i class="bi bi-people"></i>
-                                    <div>
-                                        <strong>150+</strong>
-                                        <small>Clients</small>
-                                    </div>
-                                </div>
-                                <div class="achievement-badge">
-                                    <i class="bi bi-clock"></i>
-                                    <div>
-                                        <strong>5+</strong>
-                                        <small>Years</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Services Section -->
-        <section id="services" class="py-5 services-section" style="background: var(--bg-secondary);">
-            <div class="container">
-                <div class="row justify-content-center text-center mb-5">
-                    <div class="col-lg-8">
-                        <h2 class="gradient-text mb-4">Comprehensive Web Solutions</h2>
-                        <p class="fs-5">End-to-end digital services tailored for your success</p>
-                    </div>
-                </div>
-
-                <div class="row g-4">
-                    <!-- Service 1 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-card-modern">
-                            <div class="service-header">
-                                <div class="service-icon-modern">
-                                    <i class="bi bi-wordpress"></i>
-                                </div>
-                                <h4 class="service-title">WordPress Development</h4>
-                            </div>
-                            <p class="service-desc">From custom themes to complex functionalities, I build WordPress
-                                sites
-                                that are both powerful and user-friendly.</p>
-                            <ul class="service-features">
-                                <li><i class="bi bi-check"></i> Custom Theme Development</li>
-                                <li><i class="bi bi-check"></i> Plugin Integration</li>
-                                <li><i class="bi bi-check"></i> Responsive Design</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Service 2 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-card-modern">
-                            <div class="service-header">
-                                <div class="service-icon-modern">
-                                    <i class="bi bi-cart"></i>
-                                </div>
-                                <h4 class="service-title">E-commerce Solutions</h4>
-                            </div>
-                            <p class="service-desc">Complete online stores with secure payments, inventory management,
-                                and
-                                conversion-focused design.</p>
-                            <ul class="service-features">
-                                <li><i class="bi bi-check"></i> WooCommerce Setup</li>
-                                <li><i class="bi bi-check"></i> Payment Integration</li>
-                                <li><i class="bi bi-check"></i> Inventory Management</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Service 3 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-card-modern">
-                            <div class="service-header">
-                                <div class="service-icon-modern">
-                                    <i class="bi bi-rocket-takeoff"></i>
-                                </div>
-                                <h4 class="service-title">Performance Optimization</h4>
-                            </div>
-                            <p class="service-desc">Speed optimization services that improve loading times, user
-                                experience,
-                                and search engine rankings.</p>
-                            <ul class="service-features">
-                                <li><i class="bi bi-check-lg"></i> Speed Optimization</li>
-                                <li><i class="bi bi-check-lg"></i> SEO Enhancement</li>
-                                <li><i class="bi bi-check-lg"></i> Core Web Vitals</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Service 4 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-card-modern">
-                            <div class="service-header">
-                                <div class="service-icon-modern">
-                                    <i class="bi bi-phone"></i>
-                                </div>
-                                <h4 class="service-title">Responsive Design</h4>
-                            </div>
-                            <p class="service-desc">Mobile-first designs that look perfect on all devices and provide
-                                seamless user experiences.</p>
-                            <ul class="service-features">
-                                <li><i class="bi bi-check-lg"></i> Mobile-First Approach</li>
-                                <li><i class="bi bi-check-lg"></i> Cross-Browser Compatible</li>
-                                <li><i class="bi bi-check-lg"></i> Touch-Friendly Interface</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Service 5 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-card-modern">
-                            <div class="service-header">
-                                <div class="service-icon-modern">
-                                    <i class="bi bi-shield-check"></i>
-                                </div>
-                                <h4 class="service-title">Security & Maintenance</h4>
-                            </div>
-                            <p class="service-desc">Comprehensive security measures and ongoing maintenance to keep your
-                                website safe and updated.</p>
-                            <ul class="service-features">
-                                <li><i class="bi bi-check-lg"></i> Security Hardening</li>
-                                <li><i class="bi bi-check-lg"></i> Regular Backups</li>
-                                <li><i class="bi bi-check-lg"></i> Updates & Monitoring</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Service 6 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-card-modern">
-                            <div class="service-header">
-                                <div class="service-icon-modern">
-                                    <i class="bi bi-search"></i>
-                                </div>
-                                <h4 class="service-title">SEO Optimization</h4>
-                            </div>
-                            <p class="service-desc">Complete SEO solutions to improve your website's visibility and
-                                ranking
-                                in search engines.</p>
-                            <ul class="service-features">
-                                <li><i class="bi bi-check-lg"></i> On-Page SEO</li>
-                                <li><i class="bi bi-check-lg"></i> Technical SEO</li>
-                                <li><i class="bi bi-check-lg"></i> Performance SEO</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Enhanced Portfolio Section -->
-        <section id="portfolio" class="py-5 portfolio-modern" style="background: var(--bg-primary);">
-            <div class="container">
-                <div class="row justify-content-center text-center mb-5">
-                    <div class="col-lg-8">
-                        <div class="section-badge mb-3">
-                            <i class="bi bi-briefcase me-2"></i>Portfolio
-                        </div>
-                        <h2 class="gradient-text mb-4">Featured Projects</h2>
-                        <p class="fs-5 text-muted">Showcasing innovative solutions that drive real business results</p>
-                    </div>
-                </div>
-
-                <!-- Modern Portfolio Filters -->
-                <div class="portfolio-modern-filters mb-5">
-                    <div class="filter-modern-container">
-                        <button class="filter-modern-btn active" data-filter="all">
-                            <span class="filter-icon"><i class="bi bi-grid"></i></span>
-                            <span class="filter-text">All Projects</span>
-                        </button>
-                        <button class="filter-modern-btn" data-filter="wordpress">
-                            <span class="filter-icon"><i class="bi bi-wordpress"></i></span>
-                            <span class="filter-text">WordPress</span>
-                        </button>
-                        <button class="filter-modern-btn" data-filter="ecommerce">
-                            <span class="filter-icon"><i class="bi bi-cart"></i></span>
-                            <span class="filter-text">E-commerce</span>
-                        </button>
-                        <button class="filter-modern-btn" data-filter="landing">
-                            <span class="filter-icon"><i class="bi bi-rocket-takeoff"></i></span>
-                            <span class="filter-text">Landing Pages</span>
-                        </button>
-                        <button class="filter-modern-btn" data-filter="custom">
-                            <span class="filter-icon"><i class="bi bi-code"></i></span>
-                            <span class="filter-text">Custom Dev</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Modern Portfolio Grid -->
-                <div class="portfolio-modern-grid">
-                    <!-- Project 1: Jewellery E-commerce -->
-                    <div class="portfolio-modern-item" data-category="wordpress ecommerce">
-                        <div class="portfolio-modern-card">
-                            <div class="portfolio-modern-image">
-                                <img src="images/portfolio/Ecommerce-Jewellery-Website.webp"
-                                    alt="WordPress WooCommerce Jewellery E-commerce Website" loading="lazy">
-                                <div class="portfolio-modern-overlay">
-                                    <div class="portfolio-overlay-content">
-                                        <div class="portfolio-overlay-icon">
-                                            <i class="bi bi-box-arrow-up-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-modern-content">
-                                <div class="portfolio-category-badge">
-                                    <i class="bi bi-gem me-1"></i>E-commerce
-                                </div>
-                                <h4 class="portfolio-title">Jewellery E-commerce Store</h4>
-                                <p class="portfolio-description">Complete WooCommerce store with custom design, payment
-                                    integration, and advanced inventory management system</p>
-
-                                <div class="portfolio-tech-stack">
-                                    <span class="tech-badge">WordPress</span>
-                                    <span class="tech-badge">WooCommerce</span>
-                                    <span class="tech-badge">Custom Theme</span>
-                                    <span class="tech-badge">Payment Gateway</span>
-                                </div>
-
-                                <div class="portfolio-actions">
-                                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20this%20Jewellery%20E-commerce%20project."
-                                        target="_blank" class="btn-portfolio btn-primary">
-                                        <i class="bi bi-eye me-1"></i>View Project
-                                    </a>
-                                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20more%20details%20about%20this%20Jewellery%20project."
-                                        target="_blank" class="btn-portfolio btn-outline">
-                                        <i class="bi bi-info-circle me-1"></i>Details
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2: Christmas Landing Page -->
-                    <div class="portfolio-modern-item" data-category="landing">
-                        <div class="portfolio-modern-card">
-                            <div class="portfolio-modern-image">
-                                <img src="images/portfolio/Christmas-Landing-Page.webp"
-                                    alt="Christmas Landing Page Design" loading="lazy">
-                                <div class="portfolio-modern-overlay">
-                                    <div class="portfolio-overlay-content">
-                                        <div class="portfolio-overlay-icon">
-                                            <i class="bi bi-box-arrow-up-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-modern-content">
-                                <div class="portfolio-category-badge">
-                                    <i class="bi bi-rocket-takeoff me-1"></i>Landing Page
-                                </div>
-                                <h4 class="portfolio-title">Christmas Landing Page</h4>
-                                <p class="portfolio-description">Festive landing page with animated elements, conversion
-                                    optimization, and responsive design for holiday campaigns</p>
-
-                                <div class="portfolio-tech-stack">
-                                    <span class="tech-badge">HTML5</span>
-                                    <span class="tech-badge">CSS3</span>
-                                    <span class="tech-badge">JavaScript</span>
-                                    <span class="tech-badge">Bootstrap</span>
-                                </div>
-
-                                <div class="portfolio-actions">
-                                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20this%20Christmas%20Landing%20Page%20project."
-                                        target="_blank" class="btn-portfolio btn-primary">
-                                        <i class="bi bi-eye me-1"></i>View Project
-                                    </a>
-                                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20more%20details%20about%20this%20Christmas%20project."
-                                        target="_blank" class="btn-portfolio btn-outline">
-                                        <i class="bi bi-info-circle me-1"></i>Details
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3: E-Commerce Website -->
-                    <div class="portfolio-modern-item" data-category="ecommerce">
-                        <div class="portfolio-modern-card">
-                            <div class="portfolio-modern-image">
-                                <img src="images/portfolio/E-Commerce-Website-Using-Bootstap.webp"
-                                    alt="E-Commerce Website Using Bootstrap" loading="lazy">
-                                <div class="portfolio-modern-overlay">
-                                    <div class="portfolio-overlay-content">
-                                        <div class="portfolio-overlay-icon">
-                                            <i class="bi bi-box-arrow-up-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-modern-content">
-                                <div class="portfolio-category-badge">
-                                    <i class="bi bi-cart me-1"></i>E-commerce
-                                </div>
-                                <h4 class="portfolio-title">Bootstrap E-Commerce Store</h4>
-                                <p class="portfolio-description">Modern e-commerce platform built with Bootstrap,
-                                    featuring
-                                    responsive design and seamless shopping experience</p>
-
-                                <div class="portfolio-tech-stack">
-                                    <span class="tech-badge">Bootstrap</span>
-                                    <span class="tech-badge">JavaScript</span>
-                                    <span class="tech-badge">jQuery</span>
-                                    <span class="tech-badge">Responsive</span>
-                                </div>
-
-                                <div class="portfolio-actions">
-                                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20this%20E-Commerce%20Website%20project."
-                                        target="_blank" class="btn-portfolio btn-primary">
-                                        <i class="bi bi-eye me-1"></i>View Project
-                                    </a>
-                                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20more%20details%20about%20this%20E-Commerce%20project."
-                                        target="_blank" class="btn-portfolio btn-outline">
-                                        <i class="bi bi-info-circle me-1"></i>Details
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4: SEO Landing Page -->
-                    <div class="portfolio-modern-item" data-category="landing">
-                        <div class="portfolio-modern-card">
-                            <div class="portfolio-modern-image">
-                                <img src="images/portfolio/SEO-Landing-Page.webp" alt="SEO Optimized Landing Page"
-                                    loading="lazy">
-                                <div class="portfolio-modern-overlay">
-                                    <div class="portfolio-overlay-content">
-                                        <div class="portfolio-overlay-icon">
-                                            <i class="bi bi-box-arrow-up-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-modern-content">
-                                <div class="portfolio-category-badge">
-                                    <i class="bi bi-search me-1"></i>SEO Landing
-                                </div>
-                                <h4 class="portfolio-title">SEO Optimized Landing Page</h4>
-                                <p class="portfolio-description">High-converting landing page optimized for search
-                                    engines
-                                    with advanced SEO techniques and fast loading speeds</p>
-
-                                <div class="portfolio-tech-stack">
-                                    <span class="tech-badge">SEO</span>
-                                    <span class="tech-badge">Performance</span>
-                                    <span class="tech-badge">Conversion</span>
-                                    <span class="tech-badge">Analytics</span>
-                                </div>
-
-                                <div class="portfolio-actions">
-                                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20this%20SEO%20Landing%20Page%20project."
-                                        target="_blank" class="btn-portfolio btn-primary">
-                                        <i class="bi bi-eye me-1"></i>View Project
-                                    </a>
-                                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20more%20details%20about%20this%20SEO%20project."
-                                        target="_blank" class="btn-portfolio btn-outline">
-                                        <i class="bi bi-info-circle me-1"></i>Details
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 5: Restaurant Website -->
-                    <div class="portfolio-modern-item" data-category="custom">
-                        <div class="portfolio-modern-card">
-                            <div class="portfolio-modern-image">
-                                <img src="images/portfolio/Foodies.webp" alt="Restaurant Website - Foodies"
-                                    loading="lazy">
-                                <div class="portfolio-modern-overlay">
-                                    <div class="portfolio-overlay-content">
-                                        <div class="portfolio-overlay-icon">
-                                            <i class="bi bi-box-arrow-up-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-modern-content">
-                                <div class="portfolio-category-badge">
-                                    <i class="bi bi-cup-hot me-1"></i>Restaurant
-                                </div>
-                                <h4 class="portfolio-title">Foodies Restaurant Website</h4>
-                                <p class="portfolio-description">Dynamic restaurant website with online menu,
-                                    reservation
-                                    system, and food delivery integration</p>
-
-                                <div class="portfolio-tech-stack">
-                                    <span class="tech-badge">Custom Design</span>
-                                    <span class="tech-badge">Booking System</span>
-                                    <span class="tech-badge">Menu Display</span>
-                                    <span class="tech-badge">Mobile App</span>
-                                </div>
-
-                                <div class="portfolio-actions">
-                                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20this%20Restaurant%20Website%20project."
-                                        target="_blank" class="btn-portfolio btn-primary">
-                                        <i class="bi bi-eye me-1"></i>View Project
-                                    </a>
-                                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20more%20details%20about%20this%20Restaurant%20project."
-                                        target="_blank" class="btn-portfolio btn-outline">
-                                        <i class="bi bi-info-circle me-1"></i>Details
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 6: Headphones Product Showcase -->
-                    <div class="portfolio-modern-item" data-category="landing">
-                        <div class="portfolio-modern-card">
-                            <div class="portfolio-modern-image">
-                                <img src="images/portfolio/HeadPhones.webp" alt="Headphones Product Showcase Website"
-                                    loading="lazy">
-                                <div class="portfolio-modern-overlay">
-                                    <div class="portfolio-overlay-content">
-                                        <div class="portfolio-overlay-icon">
-                                            <i class="bi bi-box-arrow-up-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-modern-content">
-                                <div class="portfolio-category-badge">
-                                    <i class="bi bi-headphones me-1"></i>Product
-                                </div>
-                                <h4 class="portfolio-title">Headphones Showcase</h4>
-                                <p class="portfolio-description">Interactive product showcase with 3D animations,
-                                    specifications display, and immersive user experience</p>
-
-                                <div class="portfolio-tech-stack">
-                                    <span class="tech-badge">3D Animation</span>
-                                    <span class="tech-badge">Interactive</span>
-                                    <span class="tech-badge">Product Display</span>
-                                    <span class="tech-badge">Modern UI</span>
-                                </div>
-
-                                <div class="portfolio-actions">
-                                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20this%20Headphones%20Showcase%20project."
-                                        target="_blank" class="btn-portfolio btn-primary">
-                                        <i class="bi bi-eye me-1"></i>View Project
-                                    </a>
-                                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20more%20details%20about%20this%20Headphones%20project."
-                                        target="_blank" class="btn-portfolio btn-outline">
-                                        <i class="bi bi-info-circle me-1"></i>Details
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Modern Testimonials Section -->
-        <div class="portfolio-overlay">
-            <div class="portfolio-content">
-                <h4>Mobile App Landing Page</h4>
-                <p>Conversion-optimized landing page with modern design and compelling call-to-actions</p>
-                <div class="portfolio-tech mt-3">
-                    <span class="badge-glow">Landing Page</span>
-                    <span class="badge-glow">Responsive</span>
-                    <span class="badge-glow">High Converting</span>
-                </div>
-                <div class="portfolio-actions mt-3">
-                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20this%20Christmas%20Landing%20Page%20project."
-                        target="_blank" class="btn-modern btn-primary btn-sm me-2">
-                        <i class="bi bi-box-arrow-up-right me-1"></i>Live Preview
-                    </a>
-                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20more%20details%20about%20this%20Christmas%20Landing%20Page%20project."
-                        target="_blank" class="btn-modern btn-outline btn-sm">
-                        <i class="bi bi-info-circle me-1"></i>Details
-                    </a>
                 </div>
             </div>
         </div>
-        </div>
-
-        <!-- Duplicate portfolio items removed -->
-        </div>
-        </section>
-
-        <!-- Modern Testimonials Section -->
-        <section id="testimonials" class="py-5" style="background: var(--bg-secondary);">
-            <div class="container">
-                <div class="row justify-content-center text-center mb-5">
-                    <div class="col-lg-8">
-                        <h2 class="gradient-text mb-4">Client Testimonials</h2>
-                        <p class="fs-5">What my clients say about working with me</p>
-                    </div>
-                </div>
-
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <i class="bi bi-quote text-primary mb-3" style="font-size: 2rem;"></i>
-                            <p class="mb-4">
-                                "Sowrav delivered an exceptional WordPress website that exceeded our expectations.
-                                His attention to detail and technical expertise are outstanding. The site performs
-                                beautifully and our conversion rates have increased significantly."
-                            </p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">
-                                <i class="bi bi-person"></i>
-                            </div>
-                            <div>
-                                <h5 class="testimonial-name">Sarah Johnson</h5>
-                                <p class="testimonial-role">CEO, TechStart Solutions</p>
-                                <div class="testimonial-rating">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <i class="bi bi-quote text-primary mb-3" style="font-size: 2rem;"></i>
-                            <p class="mb-4">
-                                "Working with Sowrav was a game-changer for our online store. He transformed our
-                                outdated website into a modern, fast-loading e-commerce platform. Sales have
-                                doubled since the launch!"
-                            </p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">
-                                <i class="bi bi-person"></i>
-                            </div>
-                            <div>
-                                <h5 class="testimonial-name">Michael Chen</h5>
-                                <p class="testimonial-role">Founder, Urban Fashion</p>
-                                <div class="testimonial-rating">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <i class="bi bi-quote text-primary mb-3" style="font-size: 2rem;"></i>
-                            <p class="mb-4">
-                                "Sowrav's WordPress expertise is exceptional. He created a custom solution that
-                                perfectly fits our business needs. The ongoing maintenance and support have been
-                                flawless. Highly recommended!"
-                            </p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">
-                                <i class="bi bi-person"></i>
-                            </div>
-                            <div>
-                                <h5 class="testimonial-name">Emily Rodriguez</h5>
-                                <p class="testimonial-role">Director, Digital Marketing Pro</p>
-                                <div class="testimonial-rating">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="py-5 services-section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <h2 class="gradient-text mb-4">Comprehensive Web Solutions</h2>
+                    <p class="fs-5">End-to-end digital services tailored for your success</p>
                 </div>
             </div>
-        </section>
 
-        <!-- Modern Contact Section -->
-        <section id="contact" class="py-5">
-            <div class="container">
-                <div class="row justify-content-center text-center mb-5">
-                    <div class="col-lg-8">
-                        <h2 class="gradient-text mb-4">Let's Work Together</h2>
-                        <p class="fs-5">Ready to transform your WordPress project? Get in touch today!</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6 mb-5 mb-lg-0">
-                        <div class="contact-info">
-                            <div class="contact-item glass-card mb-4">
-                                <div class="d-flex align-items-center">
-                                    <div class="contact-icon me-4">
-                                        <i class="bi bi-envelope"></i>
-                                    </div>
-                                    <div>
-                                        <h5>Email</h5>
-                                        <p class="mb-0">sowravhasan101@gmail.com</p>
-                                    </div>
-                                </div>
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card-modern">
+                        <div class="service-header">
+                            <div class="service-icon-modern">
+                                <i class="fa-brands fa-wordpress"></i>
                             </div>
-
-                            <div class="contact-item glass-card mb-4">
-                                <div class="d-flex align-items-center">
-                                    <div class="contact-icon me-4">
-                                        <i class="bi bi-whatsapp"></i>
-                                    </div>
-                                    <div>
-                                        <h5>WhatsApp</h5>
-                                        <p class="mb-0">+8801882408643</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="contact-item glass-card mb-4">
-                                <div class="d-flex align-items-center">
-                                    <div class="contact-icon me-4">
-                                        <i class="bi bi-messenger"></i>
-                                    </div>
-                                    <div>
-                                        <h5>Messenger</h5>
-                                        <p class="mb-0">Chat on Facebook</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="contact-item glass-card">
-                                <div class="d-flex align-items-center">
-                                    <div class="contact-icon me-4">
-                                        <i class="bi bi-geo-alt"></i>
-                                    </div>
-                                    <div>
-                                        <h5>Location</h5>
-                                        <p class="mb-0">Dhaka, Bangladesh</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <h4 class="service-title">WordPress Development</h4>
                         </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <form class="contact-form glass-card">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Your Name</label>
-                                <input type="text" class="form-control modern-input" id="name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control modern-input" id="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="subject" class="form-label">Subject</label>
-                                <input type="text" class="form-control modern-input" id="subject" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Your Message</label>
-                                <textarea class="form-control modern-input" id="message" rows="5" required></textarea>
-                            </div>
-                            <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20send%20you%20a%20message%20about%20a%20project."
-                                target="_blank" class="btn-modern btn-primary w-100">
-                                <i class="bi bi-send me-2"></i>
-                                Send Message
-                            </a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Enhanced Footer -->
-        <footer class="py-5" style="background: var(--bg-secondary); border-top: 2px solid rgba(139, 92, 246, 0.2);">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <h4 class="gradient-text mb-3">Sowrav Hasan</h4>
-                        <p class="mb-4">WordPress Expert & Modern Web Developer specializing in high-performance
-                            websites
-                            and e-commerce solutions that drive business growth.</p>
-                        <div class="social-links d-flex gap-3">
-                            <a href="https://www.linkedin.com/in/sowrav-hasan/" target="_blank" class="social-link">
-                                <i class="bi bi-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/sowravhasan" target="_blank" class="social-link">
-                                <i class="bi bi-github"></i>
-                            </a>
-                            <a href="https://web.facebook.com/sowravhasan0" target="_blank" class="social-link">
-                                <i class="bi bi-facebook"></i>
-                            </a>
-                            <a href="https://www.upwork.com/freelancers/~016f66d129914c34af" target="_blank"
-                                class="social-link upwork-link">
-                                <img src="images/upwork.png" alt="Upwork" class="social-icon-img">
-                            </a>
-                            <a href="https://www.fiverr.com/sowrav_hasan/" target="_blank"
-                                class="social-link fiverr-link">
-                                <img src="images/fiverr.png" alt="Fiverr" class="social-icon-img">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                        <h5 class="mb-3" style="color: var(--primary);">Services</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><a href="#services" class="footer-link">WordPress Development</a></li>
-                            <li class="mb-2"><a href="#services" class="footer-link">WooCommerce Stores</a></li>
-                            <li class="mb-2"><a href="#services" class="footer-link">Custom Themes</a></li>
-                            <li class="mb-2"><a href="#services" class="footer-link">SEO Optimization</a></li>
-                            <li class="mb-2"><a href="#services" class="footer-link">Website Maintenance</a></li>
+                        <p class="service-desc">From custom themes to complex functionalities, I build WordPress sites
+                            that are both powerful and user-friendly.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Custom Theme Development</li>
+                            <li><i class="fa-solid fa-check"></i> Plugin Integration</li>
+                            <li><i class="fa-solid fa-check"></i> Responsive Design</li>
                         </ul>
                     </div>
+                </div>
 
-                    <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                        <h5 class="mb-3" style="color: var(--primary);">Quick Links</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><a href="#about" class="footer-link">About Me</a></li>
-                            <li class="mb-2"><a href="#services" class="footer-link">Services</a></li>
-                            <li class="mb-2"><a href="#portfolio" class="footer-link">Portfolio</a></li>
-                            <li class="mb-2"><a href="#testimonials" class="footer-link">Testimonials</a></li>
-                            <li class="mb-2"><a href="#contact" class="footer-link">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <h5 class="mb-3" style="color: var(--primary);">Contact Info</h5>
-                        <div class="contact-info-footer mb-4">
-                            <p class="mb-2"><i class="bi bi-envelope me-2"
-                                    style="color: var(--primary);"></i>sowravhasan101@gmail.com</p>
-                            <p class="mb-2"><i class="bi bi-whatsapp me-2"
-                                    style="color: var(--primary);"></i>+8801882408643</p>
-                            <p class="mb-2"><i class="bi bi-geo-alt me-2" style="color: var(--primary);"></i>Dhaka,
-                                Bangladesh</p>
+                <!-- Service 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card-modern">
+                        <div class="service-header">
+                            <div class="service-icon-modern">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </div>
+                            <h4 class="service-title">E-commerce Solutions</h4>
                         </div>
-                        <p class="mb-3">Ready to transform your business with a stunning WordPress website?</p>
-                        <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20start%20a%20new%20project%20with%20you."
-                            target="_blank" class="btn-modern btn-primary">
-                            <i class="bi bi-rocket-takeoff me-2"></i>
-                            Start Your Project
-                        </a>
+                        <p class="service-desc">Complete online stores with secure payments, inventory management, and
+                            conversion-focused design.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> WooCommerce Setup</li>
+                            <li><i class="fa-solid fa-check"></i> Payment Integration</li>
+                            <li><i class="fa-solid fa-check"></i> Inventory Management</li>
+                        </ul>
                     </div>
                 </div>
 
-                <hr style="border-color: rgba(139, 92, 246, 0.3); margin: 3rem 0 2rem;">
-
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <p class="mb-0">&copy; <span id="current-year"></span> Sowrav Hasan. All rights reserved.</p>
+                <!-- Service 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card-modern">
+                        <div class="service-header">
+                            <div class="service-icon-modern">
+                                <i class="fa-solid fa-rocket"></i>
+                            </div>
+                            <h4 class="service-title">Performance Optimization</h4>
+                        </div>
+                        <p class="service-desc">Speed optimization services that improve loading times, user experience,
+                            and search engine rankings.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Speed Optimization</li>
+                            <li><i class="fa-solid fa-check"></i> SEO Enhancement</li>
+                            <li><i class="fa-solid fa-check"></i> Core Web Vitals</li>
+                        </ul>
                     </div>
-                    <div class="col-md-6 text-md-end">
-                        <p class="mb-0">Built with <span style="color: var(--primary);">❤️</span> and WordPress
-                            expertise
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card-modern">
+                        <div class="service-header">
+                            <div class="service-icon-modern">
+                                <i class="fa-solid fa-mobile-alt"></i>
+                            </div>
+                            <h4 class="service-title">Responsive Design</h4>
+                        </div>
+                        <p class="service-desc">Mobile-first designs that look perfect on all devices and provide
+                            seamless user experiences.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Mobile-First Approach</li>
+                            <li><i class="fa-solid fa-check"></i> Cross-Browser Compatible</li>
+                            <li><i class="fa-solid fa-check"></i> Touch-Friendly Interface</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card-modern">
+                        <div class="service-header">
+                            <div class="service-icon-modern">
+                                <i class="fa-solid fa-shield-alt"></i>
+                            </div>
+                            <h4 class="service-title">Security & Maintenance</h4>
+                        </div>
+                        <p class="service-desc">Comprehensive security measures and ongoing maintenance to keep your
+                            website safe and updated.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Security Hardening</li>
+                            <li><i class="fa-solid fa-check"></i> Regular Backups</li>
+                            <li><i class="fa-solid fa-check"></i> Updates & Monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card-modern">
+                        <div class="service-header">
+                            <div class="service-icon-modern">
+                                <i class="fa-solid fa-search"></i>
+                            </div>
+                            <h4 class="service-title">SEO Optimization</h4>
+                        </div>
+                        <p class="service-desc">Complete SEO solutions to improve your website's visibility and ranking
+                            in search engines.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> On-Page SEO</li>
+                            <li><i class="fa-solid fa-check"></i> Technical SEO</li>
+                            <li><i class="fa-solid fa-check"></i> Performance SEO</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Enhanced Portfolio Section -->
+    <section id="portfolio" class="py-5 portfolio-modern" style="background: var(--bg-primary);">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <div class="section-badge mb-3">
+                        <i class="fa-solid fa-briefcase me-2"></i>Portfolio
+                    </div>
+                    <h2 class="gradient-text mb-4">Featured Projects</h2>
+                    <p class="fs-5 text-muted">Showcasing innovative solutions that drive real business results</p>
+                </div>
+            </div>
+
+            <!-- Modern Portfolio Filters -->
+            <div class="portfolio-modern-filters mb-5">
+                <div class="filter-modern-container">
+                    <button class="filter-modern-btn active" data-filter="all">
+                        <span class="filter-icon"><i class="fa-solid fa-th-large"></i></span>
+                        <span class="filter-text">All Projects</span>
+                    </button>
+                    <button class="filter-modern-btn" data-filter="wordpress">
+                        <span class="filter-icon"><i class="fa-brands fa-wordpress"></i></span>
+                        <span class="filter-text">WordPress</span>
+                    </button>
+                    <button class="filter-modern-btn" data-filter="ecommerce">
+                        <span class="filter-icon"><i class="fa-solid fa-shopping-cart"></i></span>
+                        <span class="filter-text">E-commerce</span>
+                    </button>
+                    <button class="filter-modern-btn" data-filter="landing">
+                        <span class="filter-icon"><i class="fa-solid fa-rocket"></i></span>
+                        <span class="filter-text">Landing Pages</span>
+                    </button>
+                    <button class="filter-modern-btn" data-filter="custom">
+                        <span class="filter-icon"><i class="fa-solid fa-code"></i></span>
+                        <span class="filter-text">Custom Dev</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modern Portfolio Grid -->
+            <div class="portfolio-modern-grid">
+                <!-- Project 1: Jewellery E-commerce -->
+                <div class="portfolio-modern-item" data-category="wordpress ecommerce">
+                    <div class="portfolio-modern-card">
+                        <div class="portfolio-modern-image">
+                            <img src="images/portfolio/Ecommerce-Jewellery-Website.webp"
+                                alt="WordPress WooCommerce Jewellery E-commerce Website" loading="lazy">
+                            <div class="portfolio-modern-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <div class="portfolio-overlay-icon">
+                                        <i class="fa-solid fa-external-link-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-modern-content">
+                            <div class="portfolio-category-badge">
+                                <i class="fa-solid fa-gem me-1"></i>E-commerce
+                            </div>
+                            <h4 class="portfolio-title">Jewellery E-commerce Store</h4>
+                            <p class="portfolio-description">Complete WooCommerce store with custom design, payment
+                                integration, and advanced inventory management system</p>
+
+                            <div class="portfolio-tech-stack">
+                                <span class="tech-badge">WordPress</span>
+                                <span class="tech-badge">WooCommerce</span>
+                                <span class="tech-badge">Custom Theme</span>
+                                <span class="tech-badge">Payment Gateway</span>
+                            </div>
+
+                            <div class="portfolio-actions">
+                                <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20this%20Jewellery%20E-commerce%20project."
+                                    target="_blank" class="btn-portfolio btn-primary">
+                                    <i class="fa-solid fa-eye me-1"></i>View Project
+                                </a>
+                                <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20more%20details%20about%20this%20Jewellery%20project."
+                                    target="_blank" class="btn-portfolio btn-outline">
+                                    <i class="fa-solid fa-info-circle me-1"></i>Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Christmas Landing Page -->
+                <div class="portfolio-modern-item" data-category="landing">
+                    <div class="portfolio-modern-card">
+                        <div class="portfolio-modern-image">
+                            <img src="images/portfolio/Christmas-Landing-Page.webp" alt="Christmas Landing Page Design"
+                                loading="lazy">
+                            <div class="portfolio-modern-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <div class="portfolio-overlay-icon">
+                                        <i class="fa-solid fa-external-link-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-modern-content">
+                            <div class="portfolio-category-badge">
+                                <i class="fa-solid fa-rocket me-1"></i>Landing Page
+                            </div>
+                            <h4 class="portfolio-title">Christmas Landing Page</h4>
+                            <p class="portfolio-description">Festive landing page with animated elements, conversion
+                                optimization, and responsive design for holiday campaigns</p>
+
+                            <div class="portfolio-tech-stack">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Bootstrap</span>
+                            </div>
+
+                            <div class="portfolio-actions">
+                                <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20this%20Christmas%20Landing%20Page%20project."
+                                    target="_blank" class="btn-portfolio btn-primary">
+                                    <i class="fa-solid fa-eye me-1"></i>View Project
+                                </a>
+                                <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20more%20details%20about%20this%20Christmas%20project."
+                                    target="_blank" class="btn-portfolio btn-outline">
+                                    <i class="fa-solid fa-info-circle me-1"></i>Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: E-Commerce Website -->
+                <div class="portfolio-modern-item" data-category="ecommerce">
+                    <div class="portfolio-modern-card">
+                        <div class="portfolio-modern-image">
+                            <img src="images/portfolio/E-Commerce-Website-Using-Bootstap.webp"
+                                alt="E-Commerce Website Using Bootstrap" loading="lazy">
+                            <div class="portfolio-modern-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <div class="portfolio-overlay-icon">
+                                        <i class="fa-solid fa-external-link-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-modern-content">
+                            <div class="portfolio-category-badge">
+                                <i class="fa-solid fa-shopping-cart me-1"></i>E-commerce
+                            </div>
+                            <h4 class="portfolio-title">Bootstrap E-Commerce Store</h4>
+                            <p class="portfolio-description">Modern e-commerce platform built with Bootstrap, featuring
+                                responsive design and seamless shopping experience</p>
+
+                            <div class="portfolio-tech-stack">
+                                <span class="tech-badge">Bootstrap</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">jQuery</span>
+                                <span class="tech-badge">Responsive</span>
+                            </div>
+
+                            <div class="portfolio-actions">
+                                <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20this%20E-Commerce%20Website%20project."
+                                    target="_blank" class="btn-portfolio btn-primary">
+                                    <i class="fa-solid fa-eye me-1"></i>View Project
+                                </a>
+                                <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20more%20details%20about%20this%20E-Commerce%20project."
+                                    target="_blank" class="btn-portfolio btn-outline">
+                                    <i class="fa-solid fa-info-circle me-1"></i>Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: SEO Landing Page -->
+                <div class="portfolio-modern-item" data-category="landing">
+                    <div class="portfolio-modern-card">
+                        <div class="portfolio-modern-image">
+                            <img src="images/portfolio/SEO-Landing-Page.webp" alt="SEO Optimized Landing Page"
+                                loading="lazy">
+                            <div class="portfolio-modern-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <div class="portfolio-overlay-icon">
+                                        <i class="fa-solid fa-external-link-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-modern-content">
+                            <div class="portfolio-category-badge">
+                                <i class="fa-solid fa-search me-1"></i>SEO Landing
+                            </div>
+                            <h4 class="portfolio-title">SEO Optimized Landing Page</h4>
+                            <p class="portfolio-description">High-converting landing page optimized for search engines
+                                with advanced SEO techniques and fast loading speeds</p>
+
+                            <div class="portfolio-tech-stack">
+                                <span class="tech-badge">SEO</span>
+                                <span class="tech-badge">Performance</span>
+                                <span class="tech-badge">Conversion</span>
+                                <span class="tech-badge">Analytics</span>
+                            </div>
+
+                            <div class="portfolio-actions">
+                                <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20this%20SEO%20Landing%20Page%20project."
+                                    target="_blank" class="btn-portfolio btn-primary">
+                                    <i class="fa-solid fa-eye me-1"></i>View Project
+                                </a>
+                                <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20more%20details%20about%20this%20SEO%20project."
+                                    target="_blank" class="btn-portfolio btn-outline">
+                                    <i class="fa-solid fa-info-circle me-1"></i>Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Restaurant Website -->
+                <div class="portfolio-modern-item" data-category="custom">
+                    <div class="portfolio-modern-card">
+                        <div class="portfolio-modern-image">
+                            <img src="images/portfolio/Foodies.webp" alt="Restaurant Website - Foodies" loading="lazy">
+                            <div class="portfolio-modern-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <div class="portfolio-overlay-icon">
+                                        <i class="fa-solid fa-external-link-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-modern-content">
+                            <div class="portfolio-category-badge">
+                                <i class="fa-solid fa-utensils me-1"></i>Restaurant
+                            </div>
+                            <h4 class="portfolio-title">Foodies Restaurant Website</h4>
+                            <p class="portfolio-description">Dynamic restaurant website with online menu, reservation
+                                system, and food delivery integration</p>
+
+                            <div class="portfolio-tech-stack">
+                                <span class="tech-badge">Custom Design</span>
+                                <span class="tech-badge">Booking System</span>
+                                <span class="tech-badge">Menu Display</span>
+                                <span class="tech-badge">Mobile App</span>
+                            </div>
+
+                            <div class="portfolio-actions">
+                                <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20this%20Restaurant%20Website%20project."
+                                    target="_blank" class="btn-portfolio btn-primary">
+                                    <i class="fa-solid fa-eye me-1"></i>View Project
+                                </a>
+                                <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20more%20details%20about%20this%20Restaurant%20project."
+                                    target="_blank" class="btn-portfolio btn-outline">
+                                    <i class="fa-solid fa-info-circle me-1"></i>Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Headphones Product Showcase -->
+                <div class="portfolio-modern-item" data-category="landing">
+                    <div class="portfolio-modern-card">
+                        <div class="portfolio-modern-image">
+                            <img src="images/portfolio/HeadPhones.webp" alt="Headphones Product Showcase Website"
+                                loading="lazy">
+                            <div class="portfolio-modern-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <div class="portfolio-overlay-icon">
+                                        <i class="fa-solid fa-external-link-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-modern-content">
+                            <div class="portfolio-category-badge">
+                                <i class="fa-solid fa-headphones me-1"></i>Product
+                            </div>
+                            <h4 class="portfolio-title">Headphones Showcase</h4>
+                            <p class="portfolio-description">Interactive product showcase with 3D animations,
+                                specifications display, and immersive user experience</p>
+
+                            <div class="portfolio-tech-stack">
+                                <span class="tech-badge">3D Animation</span>
+                                <span class="tech-badge">Interactive</span>
+                                <span class="tech-badge">Product Display</span>
+                                <span class="tech-badge">Modern UI</span>
+                            </div>
+
+                            <div class="portfolio-actions">
+                                <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20this%20Headphones%20Showcase%20project."
+                                    target="_blank" class="btn-portfolio btn-primary">
+                                    <i class="fa-solid fa-eye me-1"></i>View Project
+                                </a>
+                                <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20more%20details%20about%20this%20Headphones%20project."
+                                    target="_blank" class="btn-portfolio btn-outline">
+                                    <i class="fa-solid fa-info-circle me-1"></i>Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Testimonials Section -->
+    <div class="portfolio-overlay">
+        <div class="portfolio-content">
+            <h4>Mobile App Landing Page</h4>
+            <p>Conversion-optimized landing page with modern design and compelling call-to-actions</p>
+            <div class="portfolio-tech mt-3">
+                <span class="badge-glow">Landing Page</span>
+                <span class="badge-glow">Responsive</span>
+                <span class="badge-glow">High Converting</span>
+            </div>
+            <div class="portfolio-actions mt-3">
+                <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20discuss%20this%20Christmas%20Landing%20Page%20project."
+                    target="_blank" class="btn-modern btn-primary btn-sm me-2">
+                    <i class="fa-solid fa-external-link-alt me-1"></i>Live Preview
+                </a>
+                <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20more%20details%20about%20this%20Christmas%20Landing%20Page%20project."
+                    target="_blank" class="btn-modern btn-outline btn-sm">
+                    <i class="fa-solid fa-info-circle me-1"></i>Details
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Duplicate portfolio items removed -->
+    </div>
+    </section>
+
+    <!-- Modern Testimonials Section -->
+    <section id="testimonials" class="py-5" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <h2 class="gradient-text mb-4">Client Testimonials</h2>
+                    <p class="fs-5">What my clients say about working with me</p>
+                </div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fa-solid fa-quote-left text-primary mb-3" style="font-size: 2rem;"></i>
+                        <p class="mb-4">
+                            "Sowrav delivered an exceptional WordPress website that exceeded our expectations.
+                            His attention to detail and technical expertise are outstanding. The site performs
+                            beautifully and our conversion rates have increased significantly."
                         </p>
                     </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h5 class="testimonial-name">Sarah Johnson</h5>
+                            <p class="testimonial-role">CEO, TechStart Solutions</p>
+                            <div class="testimonial-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fa-solid fa-quote-left text-primary mb-3" style="font-size: 2rem;"></i>
+                        <p class="mb-4">
+                            "Working with Sowrav was a game-changer for our online store. He transformed our
+                            outdated website into a modern, fast-loading e-commerce platform. Sales have
+                            doubled since the launch!"
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h5 class="testimonial-name">Michael Chen</h5>
+                            <p class="testimonial-role">Founder, Urban Fashion</p>
+                            <div class="testimonial-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fa-solid fa-quote-left text-primary mb-3" style="font-size: 2rem;"></i>
+                        <p class="mb-4">
+                            "Sowrav's WordPress expertise is exceptional. He created a custom solution that
+                            perfectly fits our business needs. The ongoing maintenance and support have been
+                            flawless. Highly recommended!"
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h5 class="testimonial-name">Emily Rodriguez</h5>
+                            <p class="testimonial-role">Director, Digital Marketing Pro</p>
+                            <div class="testimonial-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </section>
 
-        <!-- Back to Top Button -->
-        <button id="backToTop" class="back-to-top" aria-label="Back to top">
-            <i class="bi bi-chevron-up"></i>
-        </button>
+    <!-- Modern Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <h2 class="gradient-text mb-4">Let's Work Together</h2>
+                    <p class="fs-5">Ready to transform your WordPress project? Get in touch today!</p>
+                </div>
+            </div>
 
-        <!-- WhatsApp Chat Button -->
-        <a href="https://wa.me/8801882408643?text=Hi%20Sowrav!%20I'm%20interested%20in%20your%20WordPress%20development%20services."
-            target="_blank" class="whatsapp-chat" aria-label="Chat on WhatsApp">
-            <i class="bi bi-whatsapp"></i>
-        </a>
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="contact-info">
+                        <div class="contact-item glass-card mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon me-4">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h5>Email</h5>
+                                    <p class="mb-0">sowravhasan101@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
 
-        <!-- Messenger Chat Button -->
-        <a href="https://m.me/sowravhasan0" target="_blank" class="messenger-chat" aria-label="Chat on Messenger">
-            <i class="bi bi-messenger"></i>
-        </a>
+                        <div class="contact-item glass-card mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon me-4">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <h5>WhatsApp</h5>
+                                    <p class="mb-0">+8801882408643</p>
+                                </div>
+                            </div>
+                        </div>
 
-        <!-- Floating Contact Button (Mobile) -->
-        <a href="#contact" class="floating-contact d-md-none" aria-label="Contact now">
-            <i class="bi bi-envelope"></i>
-            <span>Contact</span>
-        </a>
+                        <div class="contact-item glass-card mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon me-4">
+                                    <i class="fa-brands fa-facebook-messenger"></i>
+                                </div>
+                                <div>
+                                    <h5>Messenger</h5>
+                                    <p class="mb-0">Chat on Facebook</p>
+                                </div>
+                            </div>
+                        </div>
 
-        <!-- Background Shapes -->
-        <div class="hero-shape shape-1"></div>
-        <div class="hero-shape shape-2"></div>
-        <div class="hero-shape shape-3"></div>
+                        <div class="contact-item glass-card">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon me-4">
+                                    <i class="fa-solid fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h5>Location</h5>
+                                    <p class="mb-0">Dhaka, Bangladesh</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- JavaScript -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="js/minimalistic-yellow.js"></script>
+                <div class="col-lg-6">
+                    <form class="contact-form glass-card">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control modern-input" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control modern-input" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control modern-input" id="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea class="form-control modern-input" id="message" rows="5" required></textarea>
+                        </div>
+                        <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20send%20you%20a%20message%20about%20a%20project."
+                            target="_blank" class="btn-modern btn-primary w-100">
+                            <i class="fa-solid fa-paper-plane me-2"></i>
+                            Send Message
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- SVG Icons are now loaded inline - no external dependencies! -->
+    <!-- Enhanced Footer -->
+    <footer class="py-5" style="background: var(--bg-secondary); border-top: 2px solid rgba(139, 92, 246, 0.2);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="gradient-text mb-3">Sowrav Hasan</h4>
+                    <p class="mb-4">WordPress Expert & Modern Web Developer specializing in high-performance websites
+                        and e-commerce solutions that drive business growth.</p>
+                    <div class="social-links d-flex gap-3">
+                        <a href="https://www.linkedin.com/in/sowrav-hasan/" target="_blank" class="social-link">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/sowravhasan" target="_blank" class="social-link">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://web.facebook.com/sowravhasan0" target="_blank" class="social-link">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.upwork.com/freelancers/~016f66d129914c34af" target="_blank"
+                            class="social-link">
+                            <i class="fa-brands fa-upwork"></i>
+                        </a>
+                        <a href="https://www.fiverr.com/sowrav_hasan/" target="_blank" class="social-link fiverr-link">
+                            <img src="images/fiverr.png" alt="Fiverr" class="social-icon-img">
+                        </a>
+                    </div>
+                </div>
 
-        <!-- Convert any remaining Font Awesome icons to SVG -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                // Icon mapping from Font Awesome classes to SVG symbol IDs
-                const iconMap = {
-                    'fa-bars': 'icon-bars',
-                    'fa-comments': 'icon-comments',
-                    'fa-moon': 'icon-moon',
-                    'fa-sun': 'icon-sun',
-                    'fa-rocket': 'icon-rocket',
-                    'fa-handshake': 'icon-handshake',
-                    'fa-wordpress': 'icon-wordpress',
-                    'fa-elementor': 'icon-elementor',
-                    'fa-shopping-cart': 'icon-shopping-cart',
-                    'fa-php': 'icon-php',
-                    'fa-html5': 'icon-html5',
-                    'fa-css3-alt': 'icon-css3',
-                    'fa-js-square': 'icon-js',
-                    'fa-react': 'icon-react',
-                    'fa-git-alt': 'icon-git',
-                    'fa-code': 'icon-code',
-                    'fa-users': 'icon-users',
-                    'fa-clock': 'icon-clock',
-                    'fa-award': 'icon-award',
-                    'fa-user-tie': 'icon-user-tie',
-                    'fa-lightbulb': 'icon-lightbulb',
-                    'fa-mobile-alt': 'icon-mobile',
-                    'fa-search': 'icon-search',
-                    'fa-tachometer-alt': 'icon-tachometer',
-                    'fa-check': 'icon-check',
-                    'fa-shield-alt': 'icon-shield',
-                    'fa-facebook-messenger': 'icon-messenger',
-                    'fa-envelope': 'icon-envelope'
-                };
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="mb-3" style="color: var(--primary);">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#services" class="footer-link">WordPress Development</a></li>
+                        <li class="mb-2"><a href="#services" class="footer-link">WooCommerce Stores</a></li>
+                        <li class="mb-2"><a href="#services" class="footer-link">Custom Themes</a></li>
+                        <li class="mb-2"><a href="#services" class="footer-link">SEO Optimization</a></li>
+                        <li class="mb-2"><a href="#services" class="footer-link">Website Maintenance</a></li>
+                    </ul>
+                </div>
 
-                // Convert any remaining Font Awesome icons
-                document.querySelectorAll('i[class*="fa-"]').forEach(faIcon => {
-                    const classes = faIcon.className.split(' ');
-                    let svgId = null;
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="mb-3" style="color: var(--primary);">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#about" class="footer-link">About Me</a></li>
+                        <li class="mb-2"><a href="#services" class="footer-link">Services</a></li>
+                        <li class="mb-2"><a href="#portfolio" class="footer-link">Portfolio</a></li>
+                        <li class="mb-2"><a href="#testimonials" class="footer-link">Testimonials</a></li>
+                        <li class="mb-2"><a href="#contact" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
 
-                    // Find matching icon
-                    for (let cls of classes) {
-                        if (iconMap[cls]) {
-                            svgId = iconMap[cls];
-                            break;
-                        }
-                    }
+                <div class="col-lg-4">
+                    <h5 class="mb-3" style="color: var(--primary);">Contact Info</h5>
+                    <div class="contact-info-footer mb-4">
+                        <p class="mb-2"><i class="fa-solid fa-envelope me-2"
+                                style="color: var(--primary);"></i>sowravhasan101@gmail.com</p>
+                        <p class="mb-2"><i class="fa-brands fa-whatsapp me-2"
+                                style="color: var(--primary);"></i>+8801882408643</p>
+                        <p class="mb-2"><i class="fa-solid fa-map-marker-alt me-2"
+                                style="color: var(--primary);"></i>Dhaka,
+                            Bangladesh</p>
+                    </div>
+                    <p class="mb-3">Ready to transform your business with a stunning WordPress website?</p>
+                    <a href="https://wa.me/8801882408643?text=Hello%20Sowrav,%20I%20want%20to%20start%20a%20new%20project%20with%20you."
+                        target="_blank" class="btn-modern btn-primary">
+                        <i class="fa-solid fa-rocket me-2"></i>
+                        Start Your Project
+                    </a>
+                </div>
+            </div>
 
-                    if (svgId) {
-                        // Create SVG replacement
-                        const svg = document.createElement('svg');
-                        svg.className = faIcon.className.replace(/fa-\w+/g, '').replace(/\s+/g, ' ').trim() + ' icon';
-                        if (faIcon.id) svg.id = faIcon.id;
+            <hr style="border-color: rgba(139, 92, 246, 0.3); margin: 3rem 0 2rem;">
 
-                        const use = document.createElement('use');
-                        use.setAttribute('href', '#' + svgId);
-                        svg.appendChild(use);
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; <span id="current-year"></span> Sowrav Hasan. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Built with <span style="color: var(--primary);">❤️</span> and WordPress expertise
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-                        // Replace the font awesome icon
-                        faIcon.parentNode.replaceChild(svg, faIcon);
-                    }
-                });
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
 
-                console.log('✅ All icons converted to inline SVG - instant loading!');
-            });
-        </script>
+    <!-- WhatsApp Chat Button -->
+    <a href="https://wa.me/8801882408643?text=Hi%20Sowrav!%20I'm%20interested%20in%20your%20WordPress%20development%20services."
+        target="_blank" class="whatsapp-chat" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-        <!-- Theme Toggle Script for Bootstrap Icons -->
-        <script>
-            // Theme toggle functionality for Bootstrap Icons  
-            function toggleDarkMode() {
-                const html = document.documentElement;
-                const themeIcon = document.getElementById('theme-icon');
-                const isDark = html.getAttribute('data-theme') === 'dark';
+    <!-- Messenger Chat Button -->
+    <a href="https://m.me/sowravhasan0" target="_blank" class="messenger-chat" aria-label="Chat on Messenger">
+        <i class="fa-brands fa-facebook-messenger"></i>
+    </a>
 
-                if (isDark) {
-                    html.setAttribute('data-theme', 'light');
-                    themeIcon.className = 'bi bi-moon-fill';
-                    localStorage.setItem('theme', 'light');
-                } else {
-                    html.setAttribute('data-theme', 'dark');
-                    themeIcon.className = 'bi bi-sun-fill';
-                    localStorage.setItem('theme', 'dark');
-                }
+    <!-- Floating Contact Button (Mobile) -->
+    <a href="#contact" class="floating-contact d-md-none" aria-label="Contact now">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Contact</span>
+    </a>
+
+    <!-- Background Shapes -->
+    <div class="hero-shape shape-1"></div>
+    <div class="hero-shape shape-2"></div>
+    <div class="hero-shape shape-3"></div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/minimalistic-yellow.js"></script>
+
+    <!-- Dynamic Copyright Year -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentYear = new Date().getFullYear();
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = currentYear;
             }
-
-            // Initialize theme on page load
-            document.addEventListener('DOMContentLoaded', function () {
-                const savedTheme = localStorage.getItem('theme') || 'light';
-                const html = document.documentElement;
-                const themeIcon = document.getElementById('theme-icon');
-
-                if (themeIcon) {
-                    html.setAttribute('data-theme', savedTheme);
-                    if (savedTheme === 'dark') {
-                        themeIcon.className = 'bi bi-sun-fill';
-                    } else {
-                        themeIcon.className = 'bi bi-moon-fill';
-                    }
-                }
-
-                console.log('✅ Bootstrap Icons loaded - all icons working perfectly!');
-            });
-        </script> <!-- Dynamic Copyright Year -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const currentYear = new Date().getFullYear();
-                const yearElement = document.getElementById('current-year');
-                if (yearElement) {
-                    yearElement.textContent = currentYear;
-                }
-            });
-        </script>
+        });
+    </script>
 </body>
 
 </html>
