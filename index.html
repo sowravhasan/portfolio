@@ -113,28 +113,18 @@
     <!-- Humans.txt -->
     <link rel="author" href="humans.txt" type="text/plain">
 
-    <!-- Enhanced Structured Data for SEO -->
+    <!-- Enhanced Structured Data for SEO and Rich Results -->
+    <!-- Person Schema - Optimized for Google Rich Results -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Sowrav Hasan",
-        "alternateName": "Professional WordPress Developer",
+        "alternateName": ["Professional WordPress Developer", "Sowrav H", "Premium WordPress Expert"],
         "jobTitle": "Expert WordPress Developer & Web Solutions Architect",
         "description": "Professional WordPress developer and premium web solutions architect specializing in advanced custom development, high-performance WooCommerce stores, modern responsive design, and scalable web applications that drive business growth.",
         "url": "https://sowrav-hasan.netlify.app/",
-        "image": {
-            "@type": "ImageObject",
-            "url": "https://i.ibb.co/Y7PsKqZ/IMG-2041.jpg",
-            "width": 400,
-            "height": 400
-        },
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://i.ibb.co/Kw55CGp/logo.png",
-            "width": 100,
-            "height": 100
-        },
+        "image": "https://i.ibb.co/Y7PsKqZ/IMG-2041.jpg",
         "sameAs": [
             "https://web.facebook.com/sowravhasan0",
             "https://www.linkedin.com/in/sowrav-hasan/",
@@ -142,13 +132,8 @@
             "https://www.upwork.com/freelancers/~016f66d129914c34af",
             "https://www.fiverr.com/sowrav_hasan/"
         ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+880-1882408643",
-            "contactType": "customer service",
-            "availableLanguage": ["English", "Bengali"],
-            "areaServed": "Worldwide"
-        },
+        "telephone": "+880-1882408643",
+        "email": "sowravhasan101@gmail.com",
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "BD",
@@ -156,66 +141,79 @@
             "addressLocality": "Dhaka",
             "postalCode": "1000"
         },
-        "email": "sowravhasan101@gmail.com",
         "worksFor": {
             "@type": "Organization",
-            "name": "Freelance WordPress Development"
+            "name": "Freelance WordPress Development",
+            "url": "https://sowrav-hasan.netlify.app/"
         },
         "knowsAbout": [
             "Advanced WordPress Development",
             "Premium Web Solutions",
-            "Professional Web Developer",
             "Custom Website Design",
-            "E-commerce Specialist",
+            "E-commerce Development",
             "WordPress Performance Optimization",
             "Modern Responsive Design",
-            "WooCommerce Expert",
+            "WooCommerce Development",
             "SEO Implementation",
             "Website Security",
             "PHP Development",
             "JavaScript Programming",
-            "React Development",
-            "Modern CSS Frameworks",
-            "Database Optimization"
-        ],
-        "hasOccupation": {
-            "@type": "Occupation",
-            "name": "Professional WordPress Developer",
-            "description": "Expert WordPress developer and premium web solutions architect specializing in advanced custom development, high-performance WooCommerce stores, and scalable web applications.",
-            "mainEntityOfPage": "https://sowrav-hasan.netlify.app/",
-            "occupationLocation": {
-                "@type": "Place",
-                "name": "Bangladesh",
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressCountry": "BD",
-                    "addressRegion": "Dhaka Division",
-                    "addressLocality": "Dhaka"
-                }
-            },
-            "estimatedSalary": {
-                "@type": "MonetaryAmountDistribution",
-                "name": "base",
-                "currency": "USD",
-                "duration": "P1Y",
-                "percentile25": 25000,
-                "median": 35000,
-                "percentile75": 50000
-            },
-            "qualifications": "5+ years experience, 200+ successful projects completed",
-            "responsibilities": [
-                "Advanced custom WordPress development",
-                "High-performance e-commerce solutions",
-                "Website performance optimization",
-                "SEO implementation and consultation",
-                "Modern responsive web design",
-                "Technical consultation and support"
-            ]
-        }
+            "React Development"
+        ]
     }
     </script>
 
-    <!-- Additional Structured Data for Professional Service -->
+    <!-- Occupation Schema - Separate and Complete -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Occupation",
+        "name": "Professional WordPress Developer",
+        "description": "Expert WordPress developer and premium web solutions architect specializing in advanced custom development, high-performance WooCommerce stores, and scalable web applications.",
+        "mainEntityOfPage": "https://sowrav-hasan.netlify.app/",
+        "occupationLocation": {
+            "@type": "Place",
+            "name": "Bangladesh",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "BD",
+                "addressRegion": "Dhaka Division",
+                "addressLocality": "Dhaka",
+                "postalCode": "1000"
+            }
+        },
+        "estimatedSalary": {
+            "@type": "MonetaryAmountDistribution",
+            "name": "Annual Salary Range",
+            "currency": "USD",
+            "duration": "P1Y",
+            "percentile25": 25000,
+            "median": 35000,
+            "percentile75": 50000
+        },
+        "qualifications": "5+ years experience with 200+ successful projects completed",
+        "responsibilities": [
+            "Advanced custom WordPress development",
+            "High-performance e-commerce solutions", 
+            "Website performance optimization",
+            "SEO implementation and consultation",
+            "Modern responsive web design",
+            "Technical consultation and support"
+        ],
+        "skills": [
+            "WordPress Development",
+            "WooCommerce Development",
+            "PHP Programming",
+            "JavaScript",
+            "React Development",
+            "Custom Theme Development",
+            "Plugin Development",
+            "Performance Optimization"
+        ]
+    }
+    </script>
+
+    <!-- Professional Service Schema - Complete and Valid -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -226,18 +224,22 @@
         "url": "https://sowrav-hasan.netlify.app/",
         "address": {
             "@type": "PostalAddress",
-            "addressCountry": "BD",
-            "addressRegion": "Dhaka Division",
+            "streetAddress": "Dhaka",
             "addressLocality": "Dhaka",
-            "postalCode": "1000"
+            "addressRegion": "Dhaka Division",
+            "postalCode": "1000",
+            "addressCountry": "BD"
         },
         "telephone": "+880-1882408643",
         "email": "sowravhasan101@gmail.com",
         "image": "https://i.ibb.co/Y7PsKqZ/IMG-2041.jpg",
         "priceRange": "$299 - $1299",
-        "areaServed": {
-            "@type": "Place",
-            "name": "Global"
+        "areaServed": "Worldwide",
+        "serviceType": "WordPress Development",
+        "provider": {
+            "@type": "Person",
+            "name": "Sowrav Hasan",
+            "jobTitle": "Expert WordPress Developer"
         },
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -249,7 +251,9 @@
                         "@type": "Service",
                         "name": "Advanced WordPress Development",
                         "description": "Custom WordPress solutions, advanced themes, and complex functionality"
-                    }
+                    },
+                    "price": "299",
+                    "priceCurrency": "USD"
                 },
                 {
                     "@type": "Offer",
@@ -257,7 +261,9 @@
                         "@type": "Service",
                         "name": "Premium E-commerce Development",
                         "description": "High-performance WooCommerce stores with advanced features and payment integration"
-                    }
+                    },
+                    "price": "599",
+                    "priceCurrency": "USD"
                 },
                 {
                     "@type": "Offer",
@@ -265,7 +271,9 @@
                         "@type": "Service",
                         "name": "Performance Optimization",
                         "description": "Website speed optimization, SEO implementation, and technical enhancements"
-                    }
+                    },
+                    "price": "199",
+                    "priceCurrency": "USD"
                 }
             ]
         },
@@ -275,38 +283,62 @@
             "reviewCount": "150",
             "bestRating": "5",
             "worstRating": "1"
-        }
+        },
+        "openingHours": "Mo-Su 09:00-18:00"
+    }
+    </script>
     }
     </script>
 
-    <!-- Organization Schema -->
+    <!-- Organization Schema - Complete and Valid -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Sowrav Hasan WordPress Development",
+        "alternateName": "Premium WordPress Development Services",
         "url": "https://sowrav-hasan.netlify.app/",
         "logo": "https://i.ibb.co/Kw55CGp/logo.png",
         "image": "https://i.ibb.co/Y7PsKqZ/IMG-2041.jpg",
+        "description": "Professional WordPress development and premium web solutions company specializing in custom development, e-commerce solutions, and modern web applications.",
         "address": {
             "@type": "PostalAddress",
-            "addressCountry": "BD",
-            "addressRegion": "Dhaka Division",
+            "streetAddress": "Dhaka",
             "addressLocality": "Dhaka",
-            "postalCode": "1000"
+            "addressRegion": "Dhaka Division",
+            "postalCode": "1000",
+            "addressCountry": "BD"
         },
+        "telephone": "+880-1882408643",
+        "email": "sowravhasan101@gmail.com",
         "sameAs": [
             "https://web.facebook.com/sowravhasan0",
             "https://www.linkedin.com/in/sowrav-hasan/",
-            "https://github.com/sowravhasan"
+            "https://github.com/sowravhasan",
+            "https://www.fiverr.com/sowrav_hasan/",
+            "https://www.upwork.com/freelancers/~016f66d129914c34af"
         ],
+        "founder": {
+            "@type": "Person",
+            "name": "Sowrav Hasan"
+        },
+        "foundingDate": "2019",
+        "numberOfEmployees": 1,
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+880-1882408643",
             "contactType": "customer service",
             "availableLanguage": ["English", "Bengali"],
             "areaServed": "Worldwide"
-        }
+        },
+        "serviceArea": "Worldwide",
+        "knowsAbout": [
+            "WordPress Development",
+            "WooCommerce Development",
+            "Custom Web Development",
+            "E-commerce Solutions",
+            "Website Performance Optimization"
+        ]
     }
     </script>
 
