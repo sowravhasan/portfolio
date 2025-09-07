@@ -83,6 +83,14 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
 
+    <!-- Preload Font Awesome Web Fonts -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-brands-400.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-regular-400.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+
     <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
 
@@ -1499,7 +1507,7 @@
     <!-- Font Awesome Fallback Loading -->
     <script>
         (function () {
-            // Check if Font Awesome is loaded properly
+            // Enhanced check if Font Awesome is loaded properly
             function checkFontAwesome() {
                 const testElement = document.createElement('i');
                 testElement.className = 'fa-solid fa-heart';
@@ -1510,14 +1518,17 @@
 
                 const computed = window.getComputedStyle(testElement);
                 const fontFamily = computed.fontFamily.toLowerCase();
+                const content = window.getComputedStyle(testElement, '::before').content;
                 document.body.removeChild(testElement);
 
-                return fontFamily.includes('font awesome') || fontFamily.includes('fa solid');
+                // Check both font family and if pseudo content exists (better detection)
+                return (fontFamily.includes('font awesome') || fontFamily.includes('fa solid')) &&
+                    (content && content !== 'none' && content !== '""');
             }
 
-            // Fallback loader
+            // Enhanced fallback loader with CSP handling
             let attempts = 0;
-            const maxAttempts = 50;
+            const maxAttempts = 60; // Increase timeout for slow connections
 
             const checkInterval = setInterval(() => {
                 attempts++;
@@ -1526,11 +1537,27 @@
                     clearInterval(checkInterval);
                     document.body.classList.add('fa-loaded');
                     console.log('✅ Font Awesome loaded successfully');
+
+                    // Force re-render of icons to make them visible
+                    const icons = document.querySelectorAll('i[class*="fa-"]');
+                    icons.forEach(icon => {
+                        icon.style.display = 'none';
+                        icon.offsetHeight; // Trigger reflow
+                        icon.style.display = '';
+                    });
                     return;
                 }
 
                 if (attempts >= maxAttempts) {
                     clearInterval(checkInterval);
+                    console.warn('⚠️ Font Awesome loading timeout - trying alternative approach');
+
+                    // Try to load via different method
+                    const existingLink = document.querySelector('link[href*="font-awesome"]');
+                    if (existingLink) {
+                        existingLink.remove();
+                    }
+
                     // Load fallback Font Awesome from alternative CDN
                     const fallbackLink = document.createElement('link');
                     fallbackLink.rel = 'stylesheet';
@@ -1545,10 +1572,19 @@
                         if (checkFontAwesome()) {
                             document.body.classList.add('fa-loaded');
                             console.log('✅ Font Awesome fallback loaded');
+
+                            // Force re-render of icons
+                            const icons = document.querySelectorAll('i[class*="fa-"]');
+                            icons.forEach(icon => {
+                                icon.style.display = 'none';
+                                icon.offsetHeight; // Trigger reflow
+                                icon.style.display = '';
+                            });
                         } else {
                             console.error('❌ Font Awesome failed to load from both CDNs');
+                            document.body.classList.add('fa-failed');
                         }
-                    }, 2000);
+                    }, 3000);
                 }
             }, 100);
         })();
